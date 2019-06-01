@@ -9,7 +9,7 @@ services:
     image: digitalocean.com/php
     env_file:
       - ./.env
-    container_name: laravel_app
+    container_name: worklog_app
     restart: unless-stopped
     tty: true
     environment:
@@ -25,7 +25,7 @@ services:
   #Nginx Service
   web:
     image: nginx:alpine
-    container_name: laravel_web
+    container_name: worklog_web
     restart: unless-stopped
     tty: true
     ports:
@@ -42,7 +42,7 @@ services:
     image: mysql:5.7
     env_file:
       - ./.env
-    container_name: laravel_db
+    container_name: worklog_db
     restart: unless-stopped
     tty: true
     ports:
