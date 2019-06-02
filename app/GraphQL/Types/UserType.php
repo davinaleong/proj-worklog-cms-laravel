@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Types;
+namespace App\GraphQL\Type;
 
 use GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
