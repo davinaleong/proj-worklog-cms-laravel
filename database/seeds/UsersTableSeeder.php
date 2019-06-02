@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 	            'name' => $faker->name,
 	            'email' => $faker->email,
                 'photo' => $faker->imageUrl($width = 640, $height = 480),
-                'password' => $faker->password,
+                'password' => Hash::make('ent3r1n'),
                 'api_token' => Str::random(60)
 	        ]);
 	    }
