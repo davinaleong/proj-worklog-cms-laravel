@@ -8,7 +8,8 @@ use Rebing\GraphQL\Support\Query;
 use Rebing\GrahpQL\Support\SelectFields;
 use App\User;
 
-class UsersQuery extends Query {
+class UsersQuery extends Query
+{
 
     protected $attributes = [
         'name' => 'users'
