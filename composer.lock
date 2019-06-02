@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b62ca4922bc6fda79000d49ce602715e",
+    "content-hash": "bca2f89d765e6b3f672ebc2049b9cf52",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3389,6 +3389,55 @@
                 "object graph"
             ],
             "time": "2019-04-07T13:18:21+00:00"
+        },
+        {
+            "name": "noh4ck/graphiql",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nohac/laravel-graphiql.git",
+                "reference": "c2a3ce1f7a577de839bc3df642d3517a90702106"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nohac/laravel-graphiql/zipball/c2a3ce1f7a577de839bc3df642d3517a90702106",
+                "reference": "c2a3ce1f7a577de839bc3df642d3517a90702106",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Graphiql\\GraphiqlServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Graphiql\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonas Rudlang",
+                    "email": "jonas.rudlang@gmail.com"
+                }
+            ],
+            "description": "Graphiql UI for laravel",
+            "keywords": [
+                "graphiql",
+                "graphql",
+                "laravel"
+            ],
+            "time": "2019-03-28T08:52:55+00:00"
         },
         {
             "name": "nunomaduro/collision",
