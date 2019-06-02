@@ -104,7 +104,9 @@ return [
                 'users' => App\GraphQL\Query\UsersQuery::class
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                'createUser' => App\GraphQL\Mutation\CreateUserMutation::class,
+                'updateUser' => App\GraphQL\Mutation\UpdateUserMutation::class,
+                'deleteUser' => App\GraphQL\Mutation\DeleteUserMutation::class
             ],
             'middleware' => [],
             'method'     => ['get', 'post'],
