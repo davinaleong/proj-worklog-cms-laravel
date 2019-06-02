@@ -100,7 +100,8 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // 'example_query' => ExampleQuery::class,
+                'user'  => App\GraphQL\Query\UserQuery::class,
+                'users' => App\GraphQL\Query\UsersQuery::class
             ],
             'mutation' => [
                 // 'example_mutation'  => ExampleMutation::class,
@@ -120,7 +121,7 @@ return [
     // ]
     //
     'types' => [
-        // 'example'           => ExampleType::class,
+        'User' => App\GraphQL\Type\UserType::class
         // 'relation_example'  => ExampleRelationType::class,
     ],
 
