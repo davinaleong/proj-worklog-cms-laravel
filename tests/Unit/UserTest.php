@@ -38,10 +38,13 @@ class UserTest extends TestCase
      */
     public function check_human_datetime_output()
     {
-        $this->markTestIncomplete();
         // Create a user
+        $user = $this->newUser();
 
         // Assert human format of datetime fields
+        $this->assertEquals('01 Jun 2019, 16:45:00', $user->humanCreatedAt());
+        $this->assertEquals('01 Jun 2019, 16:45:00', $user->humanUpdatedAt());
+        $this->assertEquals('01 Jun 2019, 16:45:00', $user->humanLoggedInAt());
     }
 
     /**
@@ -49,13 +52,18 @@ class UserTest extends TestCase
      *
      * @return App\Models\User
      */
-    private function newUser()
+    private function newUser($emailVerifiedAt=null, $deletedAt=null)
     {
         return factory(User::class)->create([
             'name'      => 'Jane Doe',
             'email'     => 'Jane.doe@example.com',
+            'email_verified_at' => $emailVerifiedAt,
             'password'  => Hash::make('test1234'),
-            'photo'     => 'https://lorempixel.com/640/480/?65533'
+            'photo'     => 'https://lorempixel.com/640/480/?65533',
+            'created_at'    => '2019-06-01 16:45:00',
+            'updated_at'    => '2019-06-01 16:45:00',
+            'deleted_at'    => $deletedAt,
+            'logged_in_at'    => '2019-06-01 16:45:00',
         ]);
     }
 }

@@ -41,7 +41,7 @@ class User extends Authenticatable
     /**
      * Date format used to show datetime to user.
      */
-    private $humanDateFormat = 'd M Y, h:i:s';
+    private $humanDateFormat = 'd M Y, H:i:s';
 
     /**
      * Default datetime zone.
@@ -61,8 +61,8 @@ class User extends Authenticatable
      */
     public function humanCreatedAt()
     {
-        $datetime = new DateTime($this->attributes['created_at'], new DateTimeZone($this::$dateTimeZone));
-        return $datetime->format($this::$humanDateFormat);
+        $datetime = new \Datetime($this->attributes['created_at'], new \DatetimeZone($this->dateTimeZone));
+        return $datetime->format($this->humanDateFormat);
     }
 
     /**
@@ -70,8 +70,8 @@ class User extends Authenticatable
      */
     public function humanUpdatedAt()
     {
-        $datetime = new DateTime($this->attributes['updated_at'], new DateTimeZone($this::$dateTimeZone));
-        return $datetime->format($this::$humanDateFormat);
+        $datetime = new \Datetime($this->attributes['updated_at'], new \DatetimeZone($this->dateTimeZone));
+        return $datetime->format($this->humanDateFormat);
     }
 
     /**
@@ -79,8 +79,8 @@ class User extends Authenticatable
      */
     public function humanLoggedInAt()
     {
-        $datetime = new DateTime($this->attributes['logged_in_at'], new DateTimeZone($this::$dateTimeZone));
-        return $datetime->format($this::$humanDateFormat);
+        $datetime = new \DateTime($this->attributes['logged_in_at'], new \DateTimeZone($this->dateTimeZone));
+        return $datetime->format($this->humanDateFormat);
     }
 
     /**
