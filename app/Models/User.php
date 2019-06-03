@@ -86,7 +86,7 @@ class User extends Authenticatable
     /**
      * A flag to indicate whether the user has verified their email.
      */
-    public function verified()
+    public function isVerified()
     {
         return $this->attributes['email_verified_at'] ?? true;
     }
@@ -94,7 +94,7 @@ class User extends Authenticatable
     /**
      * Flag to indicate whether the user has been removed.
      */
-    public function deleted()
+    public function isDeleted()
     {
         return $this->attributes['deleted_at'] ?? true;
     }
