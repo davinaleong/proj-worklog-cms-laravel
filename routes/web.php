@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pages/{pageName}', function($pageName) {
+    return view("pages.$pageName");
+});
