@@ -14,14 +14,11 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-	    foreach (range(1,3) as $i) {
-	        User::create([
-	            'name' => $faker->name,
-	            'email' => $faker->email,
-                'photo' => $faker->imageUrl($width = 640, $height = 480),
-                'password' => Hash::make('ent3r1n'),
-                'api_token' => Str::random(60)
-	        ]);
-	    }
+        User::create([
+            'name' => 'Davina Leong',
+            'email' => 'leong.shi.yun@gmail.com',
+            'photo' => $faker->imageUrl($width = 640, $height = 480),
+            'password' => Hash::make('ent3r1n')
+        ]);
     }
 }
