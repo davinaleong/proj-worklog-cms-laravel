@@ -88,7 +88,7 @@ class User extends Authenticatable
      */
     public function isVerified()
     {
-        return $this->attributes['email_verified_at'] ?? true;
+        return isset($this->attributes['email_verified_at']) ? true : false;
     }
 
     /**
@@ -96,7 +96,7 @@ class User extends Authenticatable
      */
     public function isDeleted()
     {
-        return $this->attributes['deleted_at'] ?? true;
+        return isset($this->attributes['deleted_at']) ? true : false;
     }
 
 }

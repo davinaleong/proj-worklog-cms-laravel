@@ -48,7 +48,68 @@ class UserTest extends TestCase
     }
 
     /**
-     * Creates a user for the purpose of testing.
+     * @test
+     * Check that isVerified is false when email_verified_at is empty.
+     *
+     * @return void
+     */
+    public function user_not_verified_when_email_verified_at_not_filled()
+    {
+        // Create a user with email_verified_at empty
+        $user = $this->newUser(null);
+
+        // Assert user is not verified
+        $this->assertFalse($user->isVerified());
+    }
+
+    /**
+     * @test
+     * Check that user is marked 'verified' when the email_verified_at
+     * field is filled.
+     *
+     * @return void
+     */
+    public function user_verified_when_email_verified_at_filled()
+    {
+        // Create a user with email_verified_at filled
+        $user = $this->newUser('2019-06-01 16:45:00');
+
+        // Assert user is verified
+        $this->assertTrue($user->isVerified());
+    }
+
+    /**
+     * @test
+     * Check isDeleted returns false when deleted_at is empty.
+     *
+     * @return void
+     */
+    public function user_not_deleted_when_deleted_at_empty()
+    {
+        // Create a user with deleted_at is null
+        $user = $this->newUser(null, null);
+
+        // Assert that isDeleted is false
+        $this->assertFalse($user->isDeleted());
+    }
+
+    /**
+     * @test
+     * Check that user is deleted when deleted_at is filled.
+     *
+     * @return void
+     */
+    public function user_deleted_when_deleted_at_filled()
+    {
+        // Create a user with deleted_at filled
+        $user = $this->newUser(null, '2019-06-01 16:45:00');
+
+        // Assert that isDeleted is true
+        $this->assertTrue($user->isDeleted());
+    }
+
+    /**
+     * Create a user for the purpose of testing.
      *
      * @return App\Models\User
      */
