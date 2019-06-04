@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/activity-log.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/admin-settings.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +53,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/activity-log.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
               <caret line="187" column="81" lean-forward="true" selection-start-line="187" selection-start-column="81" selection-end-line="187" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/admin-settings.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <folding>
+                <element signature="e#1391#1397#1#HTML" expanded="true" />
+                <element signature="e#10760#10766#1#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,6 +123,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/profile.blade.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/pages-to-import.md" />
         <option value="$PROJECT_DIR$/resources/views/pages/activity-log.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/admin-settings.blade.php" />
       </list>
     </option>
   </component>
@@ -303,12 +316,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559565261545</updated>
-      <workItem from="1559565262961" duration="5296000" />
+      <workItem from="1559565262961" duration="5375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5878000" />
+    <option name="totallyTimeSpent" value="5957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="35" width="1400" height="768" extended-state="0" />
@@ -479,6 +492,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="187" column="81" lean-forward="true" selection-start-line="187" selection-start-column="81" selection-end-line="187" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/admin-settings.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding>
+            <element signature="e#1391#1397#1#HTML" expanded="true" />
+            <element signature="e#10760#10766#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
