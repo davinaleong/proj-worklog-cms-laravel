@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Work Log - Dashboard</title>
+    <title>Work Log</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -21,56 +21,28 @@
     <!-- Custom Stylesheet -->
     <link href="{{ asset('css/work-log.css') }}" rel="stylesheet">
 
-    @yield('styles')
-
 </head>
 
-<body id="page-top">
+<body class="bg-gradient-primary">
 
-<!-- Page Wrapper -->
-<div id="wrapper">
+<div class="container">
 
-    <!-- Sidebar -->
-@include('partials.sidebar')
-<!-- End of Sidebar -->
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column pt-3">
+        <div class="col-xl-10 col-lg-12 col-md-9">
 
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                @include('partials.page-heading')
-
-                @yield('content')
-
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    @yield('content')
+                </div>
             </div>
-            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-    @include('partials.footer')
-    <!-- End of Footer -->
 
     </div>
-    <!-- End of Content Wrapper -->
 
 </div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-@include('partials.logout-modal')
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
@@ -81,11 +53,6 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
-<!-- Custom Script -->
-<script src="{{ asset('js/work-log.js') }}"></script>
-
-@yield('scripts')
 
 </body>
 
