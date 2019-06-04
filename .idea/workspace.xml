@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/tags.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/tags-edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/tags.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -75,6 +74,21 @@
                 <element signature="e#7663#7685#0#HTML" expanded="true" />
                 <element signature="e#8046#8068#0#HTML" expanded="true" />
                 <element signature="e#8414#8436#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/tags-edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="17" selection-start-line="3" selection-end-line="648" selection-end-column="14" />
+              <folding>
+                <element signature="e#7887#7893#1#HTML" expanded="true" />
+                <element signature="e#12615#12621#1#HTML" expanded="true" />
+                <element signature="e#17222#17228#1#HTML" expanded="true" />
+                <element signature="e#34546#34552#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,6 +153,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/admin-settings.blade.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/pages-to-import.md" />
         <option value="$PROJECT_DIR$/resources/views/pages/tags.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/tags-edit.blade.php" />
       </list>
     </option>
   </component>
@@ -332,12 +347,12 @@
       <option name="presentableId" value="Default" />
       <updated>1559565261545</updated>
       <workItem from="1559565262961" duration="5430000" />
-      <workItem from="1559619714745" duration="717000" />
+      <workItem from="1559619714745" duration="916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6729000" />
+    <option name="totallyTimeSpent" value="6928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="35" width="1400" height="768" extended-state="0" />
@@ -524,6 +539,19 @@
             <element signature="e#7663#7685#0#HTML" expanded="true" />
             <element signature="e#8046#8068#0#HTML" expanded="true" />
             <element signature="e#8414#8436#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/tags-edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="17" selection-start-line="3" selection-end-line="648" selection-end-column="14" />
+          <folding>
+            <element signature="e#7887#7893#1#HTML" expanded="true" />
+            <element signature="e#12615#12621#1#HTML" expanded="true" />
+            <element signature="e#17222#17228#1#HTML" expanded="true" />
+            <element signature="e#34546#34552#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
