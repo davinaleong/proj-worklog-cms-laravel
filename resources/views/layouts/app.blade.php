@@ -38,7 +38,20 @@
     <div id="content-wrapper" class="d-flex flex-column pt-3">
 
         <!-- Main Content -->
-        @yield('content')
+        <div id="content">
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                @include('partials.page-heading')
+
+                @yield('content')
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->
