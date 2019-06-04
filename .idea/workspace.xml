@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/existing-log.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/existing-log-edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,11 +74,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/existing-log.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
               <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/existing-log-edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="874" column="10" lean-forward="true" selection-start-line="874" selection-start-column="10" selection-end-line="874" selection-end-column="10" />
+              <folding>
+                <element signature="e#4954#4960#1#HTML" expanded="true" />
+                <element signature="e#14968#14974#1#HTML" expanded="true" />
+                <element signature="e#18319#18325#1#HTML" expanded="true" />
+                <element signature="e#28211#28217#1#HTML" expanded="true" />
+                <element signature="e#31562#31568#1#HTML" expanded="true" />
+                <element signature="e#37561#37567#1#HTML" expanded="true" />
+                <element signature="e#40912#40918#1#HTML" expanded="true" />
+                <element signature="e#46911#46917#1#HTML" expanded="true" />
+                <element signature="e#50262#50268#1#HTML" expanded="true" />
+                <element signature="e#56261#56267#1#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,6 +147,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/new-log.blade.php" />
         <option value="$PROJECT_DIR$/public/js/work-log.js" />
         <option value="$PROJECT_DIR$/resources/views/pages/existing-log.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/existing-log-edit.blade.php" />
       </list>
     </option>
   </component>
@@ -325,12 +347,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559565261545</updated>
-      <workItem from="1559565262961" duration="4421000" />
+      <workItem from="1559565262961" duration="4527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5003000" />
+    <option name="totallyTimeSpent" value="5109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="35" width="1400" height="768" extended-state="0" />
@@ -458,6 +480,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/existing-log-edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="874" column="10" lean-forward="true" selection-start-line="874" selection-start-column="10" selection-end-line="874" selection-end-column="10" />
+          <folding>
+            <element signature="e#4954#4960#1#HTML" expanded="true" />
+            <element signature="e#14968#14974#1#HTML" expanded="true" />
+            <element signature="e#18319#18325#1#HTML" expanded="true" />
+            <element signature="e#28211#28217#1#HTML" expanded="true" />
+            <element signature="e#31562#31568#1#HTML" expanded="true" />
+            <element signature="e#37561#37567#1#HTML" expanded="true" />
+            <element signature="e#40912#40918#1#HTML" expanded="true" />
+            <element signature="e#46911#46917#1#HTML" expanded="true" />
+            <element signature="e#50262#50268#1#HTML" expanded="true" />
+            <element signature="e#56261#56267#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
