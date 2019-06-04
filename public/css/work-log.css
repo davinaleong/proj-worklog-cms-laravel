@@ -1,0 +1,125 @@
+/*
+  Day Types
+  - Work: [laptop] Secondary
+  - Annual Leave: [umbrella] Orange
+  - Public Holiday: [calendar] Teal
+  - Medical Leave: [stethoscope] Pink
+*/
+/* :root {
+  --secondary: #858796;
+  --orange: #fd7e14;
+  --teal: #20c9a6;
+  --pink: #e83e8c;
+} */
+
+.wl-text-work {
+  color: #607d8b;
+}
+
+.wl-bg-work {
+  background-color: #607d8b;
+}
+
+.wl-border-work {
+  border-color: #607d8b;
+}
+
+.wl-text-annual-leave {
+  color: #ff9800;
+}
+
+.wl-bg-annual-leave {
+  background-color: #ff9800;
+}
+
+.wl-border-annual-leave {
+  border-color: #ff9800;
+}
+
+.wl-text-public-holiday {
+  color: #009688;
+}
+
+.wl-bg-public-holiday {
+  background-color: #009688;
+}
+
+.wl-border-public-holiday {
+  border-color: #009688;
+}
+
+.wl-text-medical-leave {
+  color: #e91e63;
+}
+
+.wl-bg-medical-leave {
+  background-color: #e91e63;
+}
+
+.wl-border-medical-leave {
+  border-color: #e91e63;
+}
+
+.wl-text-compassionate-leave {
+  color: #8e24aa;
+}
+
+.wl-bg-compassionate-leave {
+  background-color: #8e24aa;
+}
+
+.wl-border-compassionate-leave {
+  border-color: #8e24aa;
+}
+
+.wl-text-company-events {
+  color: #3f51b5;
+}
+
+.wl-bg-company-events {
+  background-color: #3f51b5;
+}
+
+.wl-border-company-events {
+  border-color: #3f51b5;
+}
+
+.wl-project-code {
+  color: #673ab7;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.wl-project-code-misc {
+  color: #9e9e9e;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-style: italic;
+}
+
+.wl-code {
+  color: #3f51b5;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  border-color: #4e73df;
+}
+
+.bg-login-image {
+  background: url("./../img/login.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-register-image {
+  background: url("./../img/register.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-password-image {
+  background: url("./../img/forgot-password.svg");
+  background-position: center;
+  background-size: cover;
+}

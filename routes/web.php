@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes('register' => false);
+Route::get('/pages/{pageName}', function($pageName) {
+    return view("pages.$pageName");
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes(['register' => false]);
