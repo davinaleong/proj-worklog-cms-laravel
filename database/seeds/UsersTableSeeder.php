@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Davina Leong',
             'email' => 'leong.shi.yun@gmail.com',
             'photo' => $faker->imageUrl($width = 640, $height = 480),
-            'password' => Hash::make('ent3r1n')
+            'password' => bcrypt('ent3r1n')
         ]);
     }
 }

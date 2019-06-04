@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use App\User;
 
 class UserTest extends TestCase
 {
@@ -111,7 +111,7 @@ class UserTest extends TestCase
     /**
      * Create a user for the purpose of testing.
      *
-     * @return App\Models\User
+     * @return App\User
      */
     private function newUser($emailVerifiedAt=null, $deletedAt=null)
     {
