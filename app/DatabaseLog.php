@@ -10,6 +10,16 @@ class DatabaseLog extends Model
     public const UPDATED_AT = null;
 
     /**
+     * Returns the user associated with the database log.
+     *
+     * @return App\User
+     */
+    public function user()
+    {
+        return User::findOrFail($this->attributes['user_id']);
+    }
+
+    /**
      * Formats the sources column into a human-readable format.
      *
      * @return string

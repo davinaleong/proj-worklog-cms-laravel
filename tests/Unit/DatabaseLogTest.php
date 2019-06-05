@@ -3,6 +3,8 @@
 namespace Tests\Unit;
 
 use App\LogAction;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -48,6 +50,22 @@ class DatabaseLogTest extends TestCase
     }
 
     /**
+     * @test
+     * Check that the DB Log has an actual user attached to it.
+     *
+     * @return void
+     */
+    public function check_database_log_has_a_user()
+    {
+        // Create records
+        $this->newUser();
+        $dbLog = $this->newDatabaseLog();
+
+        // Assert that the dbLog user exists
+        $this->assertNotNull($dbLog->user());
+    }
+
+    /**
      * Creates a new database log for testing purposes;
      *
      * @return App\DatabaseLog
@@ -85,6 +103,26 @@ class DatabaseLogTest extends TestCase
         return factory(LogAction::class)->create([
             'name' => 'Create',
             'action_code' => 'C'
+        ]);
+    }
+
+    /**
+     * Createa a user.
+     *
+     * @return App\User
+     */
+    private function newUser()
+    {
+        return factory(User::class)->create([
+            'name'      => 'Jane Doe',
+            'email'     => 'Jane.doe@example.com',
+            'email_verified_at' => '2019-06-01 16:45:00',
+            'password'  => bcrypt('test1234'),
+            'photo'     => 'https://lorempixel.com/640/480/?65533',
+            'created_at'    => '2019-06-01 16:45:00',
+            'updated_at'    => '2019-06-01 16:45:00',
+            'deleted_at'    => '2019-06-01 16:45:00',
+            'logged_in_at'    => '2019-06-01 16:45:00',
         ]);
     }
 }

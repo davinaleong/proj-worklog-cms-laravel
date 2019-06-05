@@ -109,7 +109,7 @@ class UserTest extends TestCase
     }
 
     /**
-     * Create a user for the purpose of testing.
+     * Createa a user.
      *
      * @return App\User
      */
