@@ -54,7 +54,7 @@ class DatabaseLog extends Model
      */
     public function nameAction()
     {
-        $logActions = LogAction::where('action_code', '=', 'C')->get();
+        $logActions = LogAction::where('action_code', '=', $this->attributes['action'])->get();
 
         if (count($logActions) > 0) {
             return $logActions[0]->name;
