@@ -24,7 +24,7 @@ class DatabaseLogTest extends TestCase
         $databaseLog = DatabaseLog::findOrFail(1);
 
         // Assert sources output
-        $sourcesOutput = "Log/1,LogEntries/1-15,EntryItems/1-15,";
+        $sourcesOutput = "Log/1,LogEntries/1-5,EntryItems/1-15,";
         $this->assertEquals($sourcesOutput, $databaseLog->humanSources());
     }
 
@@ -46,7 +46,7 @@ class DatabaseLogTest extends TestCase
         return factory(DatabaseLog::class)->create([
             'user_id' => 1,
             'log' => 'User created a new log record.',
-            'sources' => \json_encode($sources),
+            'sources' => json_encode($sources),
             'action' => 'C'
         ]);
     }
