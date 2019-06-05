@@ -55,7 +55,7 @@ class DatabaseLogTest extends TestCase
      *
      * @return void
      */
-    public function check_database_log_has_a_user()
+    public function check_can_have_associated_user()
     {
         // Create records
         $this->newUser();
