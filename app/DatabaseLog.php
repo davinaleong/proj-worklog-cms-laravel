@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\LogAction;
 
 class DatabaseLog extends Model
 {
@@ -44,5 +45,21 @@ class DatabaseLog extends Model
 
         // Return the generated output
         return $output;
+    }
+
+    /**
+     * Returns the name of the action enum.
+     *
+     * @return string
+     */
+    public function nameAction()
+    {
+        $logActions = LogAction::where('action_code', '=', 'C')->get();
+
+        if (count($logActions) > 0) {
+            return $logActions[0]->name;
+        }
+
+        return '';
     }
 }

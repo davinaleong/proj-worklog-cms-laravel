@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\LogAction;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -9,6 +10,8 @@ use App\DatabaseLog;
 
 class DatabaseLogTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * @test
      * Verifies that the output of the source column is correct.
@@ -28,6 +31,27 @@ class DatabaseLogTest extends TestCase
         $this->assertEquals($sourcesOutput, $databaseLog->humanSources());
     }
 
+    /**
+     * @test
+     * Checks that the output of actionName is 'Create' when action is 'C'.
+     *
+     * @return void
+     */
+    public function check_action_c_gives_name_create()
+    {
+        // Create records
+        $this->newLogAction();
+        $dbLog = $this->newDatabaseLog();
+
+        // Assert the name of the action of a database log
+        $this->assertEquals('Create', $dbLog->nameAction());
+    }
+
+    /**
+     * Creates a new database log for testing purposes;
+     *
+     * @return App\DatabaseLog
+     */
     private function newDatabaseLog()
     {
         $sources = [
@@ -48,6 +72,19 @@ class DatabaseLogTest extends TestCase
             'log' => 'User created a new log record.',
             'sources' => json_encode($sources),
             'action' => 'C'
+        ]);
+    }
+
+    /**
+     * Creates a new log action.
+     *
+     * @return App\LogAction
+     */
+    private function newLogAction()
+    {
+        return factory(LogAction::class)->create([
+            'name' => 'Create',
+            'action_code' => 'C'
         ]);
     }
 }
