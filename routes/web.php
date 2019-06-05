@@ -22,3 +22,5 @@ Route::get('/pages/{pageName}', function($pageName) {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(['register' => false]);
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
