@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/ActionLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ActionLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_action_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_action_logs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/LogActionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/LogActionsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_06_05_055142_create_database_logs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_activity_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_activity_logs_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,44 +39,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_action_logs_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="19" column="82" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/ActionLog.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_activity_logs_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="189">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/LogActionsTableSeeder.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_055142_create_database_logs_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -120,11 +96,14 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/factories/ActionLogFactory.php" />
         <option value="$PROJECT_DIR$/tests/Unit/ActionLogTest.php" />
-        <option value="$PROJECT_DIR$/app/ActionLog.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_action_logs_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_05_034428_create_log_actions_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/LogActionsTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/app/ActionLog.php" />
+        <option value="$PROJECT_DIR$/database/factories/ActivityLogFactory.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_05_055142_create_database_logs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_activity_logs_table.php" />
       </list>
     </option>
   </component>
@@ -248,6 +227,12 @@
               <item name="proj-worklog-cms-laravel" type="b2602c69:ProjectViewProjectNode" />
               <item name="proj-worklog-cms-laravel" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-worklog-cms-laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proj-worklog-cms-laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -326,13 +311,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14300000" />
+    <option name="totallyTimeSpent" value="14790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="35" width="1400" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2569956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -347,7 +332,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3287879" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3287879" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -568,37 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ActionLogFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding>
-            <element signature="e#66#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ActionLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_034428_create_log_actions_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_action_logs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="82" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="82" />
         </state>
       </provider>
     </entry>
@@ -614,8 +572,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="189">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ActivityLogFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ActivityLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_055142_create_database_logs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_05_043112_create_activity_logs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
