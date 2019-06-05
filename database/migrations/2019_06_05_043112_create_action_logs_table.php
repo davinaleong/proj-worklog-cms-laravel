@@ -17,7 +17,7 @@ class CreateActionLogsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id', false, true);
             $table->string('log');
-            $table->timestamp('timestamp');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
