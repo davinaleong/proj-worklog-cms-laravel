@@ -58,7 +58,7 @@
                 </a>
 
                 <h6 class="collapse-header">Account Actions</h6>
-                <a class="collapse-item" href="login.html">
+                <a class="collapse-item" href="{{ url('/logout') }}">
                     <i class="fas fa-fw fa-sign-out-alt"></i> Logout
                 </a>
             </div>
