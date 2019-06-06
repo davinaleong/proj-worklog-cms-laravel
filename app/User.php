@@ -57,7 +57,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Display created_at in a human-readable format.
+     * Returns created_at in a human-readable format.
      */
     public function humanCreatedAt()
     {
@@ -66,7 +66,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Display updated_at in a human-readable format.
+     * Returns updated_at in a human-readable format.
      */
     public function humanUpdatedAt()
     {
