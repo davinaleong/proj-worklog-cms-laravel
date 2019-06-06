@@ -11,68 +11,68 @@ class SourceTableSeeder extends Seeder
      */
     public function run()
     {
-        $now = new \DateTime('now', new \DateTimeZone('Asia/Singapore'));
+        $now = now('Asia/Singapore')->format('Y-m-d, H:i:s');
         DB::table('sources')->insert([
             [
                 'title_source' => 'Users',
                 'group' => 'Profile',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'ActivityLogs',
                 'group' => 'Profile',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'DatabaseLogs',
                 'group' => 'Auth',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'Log Actions',
                 'group' => 'Auth',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'Sources',
                 'group' => 'Auth',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'Logs',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'LogsEntries',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'EntryItems',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'Years',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'Companies',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'Projects',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ], [
                 'title_source' => 'DayTypes',
                 'group' => 'Work Log',
-                'created_at' => $now->format('Y-m-d H:i:s'),
-                'updated_at' => $now->format('Y-m-d H:i:s')
+                'created_at' => $now,
+                'updated_at' => $now
             ],
         ]);
     }
