@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DayType extends Model
+class DayType extends BaseModel
 {
     //
 }

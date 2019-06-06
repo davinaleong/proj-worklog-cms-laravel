@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\LogAction;
 
-class DatabaseLog extends Model
+class DatabaseLog extends BaseModel
 {
     public const UPDATED_AT = null;
 

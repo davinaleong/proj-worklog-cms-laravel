@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
+use App\DayType;
+use App\Project;
+use App\Year;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -13,6 +17,11 @@ class TagController extends Controller
      */
     public function index()
     {
-        return view('tag.index');
+        return view('tag.index', [
+            'years' => Year::all(),
+            'companies' => Company::all(),
+            'projects' => Project::all(),
+            'dayTypes' => DayType::all()
+        ]);
     }
 }
