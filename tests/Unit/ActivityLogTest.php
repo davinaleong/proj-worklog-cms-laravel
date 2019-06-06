@@ -55,7 +55,7 @@ class ActivityLogTest extends TestCase
     {
         return factory(ActivityLog::class)->create([
             'user_id' => 1,
-            'log' => 'Log created from testing suite.'
+            'log_activity' => 'Log created from testing suite.'
         ]);
     }
 }

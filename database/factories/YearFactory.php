@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Year::class, function (Faker $faker) {
     return [
-        'year_title' => $faker->randomNumber(4)
+        'title_year' => $faker->randomNumber(4)
     ];
 });

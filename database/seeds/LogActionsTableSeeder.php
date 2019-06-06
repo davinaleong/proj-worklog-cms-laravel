@@ -15,38 +15,38 @@ class LogActionsTableSeeder extends Seeder
         $now = new \DateTime('now', new \DateTimeZone('Asia/Singapore'));
         DB::table('log_actions')->insert([
             [
-                'name' => 'Others',
-                'action_code' => 'O',
+                'title_action' => 'Others',
+                'code_action' => 'O',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'name' => 'Create',
-                'action_code' => 'C',
+                'title_action' => 'Create',
+                'code_action' => 'C',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'name' => 'Retrieve',
-                'action_code' => 'R',
+                'title_action' => 'Retrieve',
+                'code_action' => 'R',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'name' => 'Update',
-                'action_code' => 'U',
+                'title_action' => 'Update',
+                'code_action' => 'U',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'name' => 'Delete',
-                'action_code' => 'D',
+                'title_action' => 'Delete',
+                'code_action' => 'D',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'name' => 'Auth',
-                'action_code' => 'A',
+                'title_action' => 'Auth',
+                'code_action' => 'A',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'name' => 'Transaction',
-                'action_code' => 'T',
+                'title_action' => 'Transaction',
+                'code_action' => 'T',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ]

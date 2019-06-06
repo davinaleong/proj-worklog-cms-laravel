@@ -42,11 +42,11 @@ class DatabaseLogTest extends TestCase
     public function check_action_c_gives_name_create()
     {
         // Create records
-        $this->newLogAction();
+        $logAction = $this->newLogAction();
         $dbLog = $this->newDatabaseLog();
 
         // Assert the name of the action of a database log
-        $this->assertEquals('Create', $dbLog->nameAction());
+        $this->assertEquals($logAction->title_action, $dbLog->nameAction());
     }
 
     /**
@@ -87,7 +87,7 @@ class DatabaseLogTest extends TestCase
 
         return factory(DatabaseLog::class)->create([
             'user_id' => 1,
-            'log' => 'User created a new log record.',
+            'log_db' => 'User created a new log record.',
             'sources' => json_encode($sources),
             'action' => 'C'
         ]);
@@ -101,8 +101,8 @@ class DatabaseLogTest extends TestCase
     private function newLogAction()
     {
         return factory(LogAction::class)->create([
-            'name' => 'Create',
-            'action_code' => 'C'
+            'title_action' => 'Create',
+            'code_action' => 'C'
         ]);
     }
 

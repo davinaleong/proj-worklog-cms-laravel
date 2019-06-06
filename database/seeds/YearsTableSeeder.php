@@ -14,23 +14,23 @@ class YearsTableSeeder extends Seeder
         $now = new \DateTime('now', new \DateTimeZone('Asia/Singapore'));
         DB::table('years')->insert([
             [
-                'year_title' => '2015',
+                'title_year' => '2015',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'year_title' => '2016',
+                'title_year' => '2016',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'year_title' => '2017',
+                'title_year' => '2017',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'year_title' => '2018',
+                'title_year' => '2018',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ], [
-                'year_title' => '2019',
+                'title_year' => '2019',
                 'created_at' => $now->format('Y-m-d H:i:s'),
                 'updated_at' => $now->format('Y-m-d H:i:s')
             ]

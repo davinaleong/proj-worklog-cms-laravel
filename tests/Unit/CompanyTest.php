@@ -33,8 +33,8 @@ class CompanyTest extends TestCase
     private function newCompany()
     {
         return factory(Company::class)->create([
-            'company_title' => 'Company A',
-            'company_code' => 'A',
+            'title_company' => 'Company A',
+            'code_company' => 'A',
             'period_started_on' => '2019-06-01 16:45:00',
             'period_ended_on' => '2019-06-01 16:45:00',
             'created_at' => '2019-06-01 16:45:00',
