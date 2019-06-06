@@ -132,6 +132,7 @@
                                 <th>Title</th>
                                 <th>Icon (FA)</th>
                                 <th>Color (Hex)</th>
+                                <th>Created At</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -140,7 +141,10 @@
                                     <td>{{ $dayType->id }}</td>
                                     <td>{{ $dayType->title_type }}</td>
                                     <td><i class="{{ $dayType->icon_fa }}"></i></td>
-                                    <td class="text-center text-light" style="background-color: {{ $dayType->color_hex }}">{{ $dayType->color_hex }}</td>
+                                    <td class="text-center text-light"
+                                        style="background-color: {{ $dayType->color_hex }}">
+                                        {{ $dayType->color_hex }}</td>
+                                    <td>{{ $dayType->humanCreatedAt() }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

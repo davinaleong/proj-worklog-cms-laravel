@@ -25,8 +25,8 @@ class Company extends BaseModel
      */
     public function humanPeriodStartedOn()
     {
-        $datetime = new \Datetime($this->attributes['period_started_on'], new \DatetimeZone($this->dateTimeZone));
-        return $datetime->format($this->dateFormats['human']);
+        $datetime = new \Datetime($this->attributes['period_started_on'], new \DatetimeZone($this->timezone()));
+        return $datetime->format($this->dateFormat('date_only'));
     }
 
     /**
@@ -37,8 +37,8 @@ class Company extends BaseModel
      */
     public function humanPeriodEndedOn()
     {
-        $datetime = new \DateTime($this->attributes['period_ended_on'], new \DateTimeZone($this->dateTimeZone));
+        $datetime = new \DateTime($this->attributes['period_ended_on'], new \DateTimeZone($this->timezone()));
 
-        return $datetime->format($this->dateFormats['human']);
+        return $datetime->format($this->dateFormat('date_only'));
     }
 }
