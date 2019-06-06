@@ -19,8 +19,10 @@ Route::get('/pages/{pageName}', function($pageName) {
     return view("pages.$pageName");
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes(['register' => false]);
 
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::middleware('auth')->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+});
