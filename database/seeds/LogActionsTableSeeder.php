@@ -12,7 +12,7 @@ class LogActionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $now = now('Asia/Singapore')->format('Y-m-d, H:i:s');
+        $now = now('Asia/Singapore')->format('Y-m-d H:i:s');
         DB::table('log_actions')->insert([
             [
                 'title_action' => 'Others',
