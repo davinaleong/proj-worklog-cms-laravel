@@ -21,8 +21,10 @@ Route::get('/pages/{pageName}', function($pageName) {
 
 Auth::routes(['register' => false]);
 
-Route::middleware('auth')->group(function() {
+Route::middleware('auth')->prefix('/jot')->group(function() {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+    Route::get('/tags');
 });
