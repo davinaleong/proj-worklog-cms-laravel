@@ -15,8 +15,8 @@ class CreateDayTypesTable extends Migration
     {
         Schema::create('day_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title_day_type')->nullable();
-            $table->string('code_day_type')->nullable();
+            $table->string('title_type')->nullable();
+            $table->string('code_type')->nullable();
             $table->string('icon_fa')->nullable();
             $table->string('color_hex')->nullable();
             $table->timestamps();
