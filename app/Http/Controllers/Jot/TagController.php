@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Jot;
 
+use App\Http\Controllers\Jot\JotController;
 use App\Company;
 use App\DayType;
 use App\Project;
 use App\Year;
 use Illuminate\Http\Request;
 
-class TagController extends Controller
+class TagController extends JotController
 {
     /**
      * Load the Tag tables page.
