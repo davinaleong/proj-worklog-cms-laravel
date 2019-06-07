@@ -4,9 +4,14 @@
     <!-- Page Sub-Heading -->
     <h2 class="h4 mb-3 text-gray-800"><i class="fas fa-fw fa-tags"></i> Tags</h2>
 
-    <!-- Note Alert -->
-    <div class="alert alert-primary">
-        <i class="fas fa-exclamation-triangle"></i> You are now <strong>editing</strong> this page.
+    @include('partials.error-alert')
+
+    <!-- Warning Alert -->
+    <div class="alert alert-warning">
+        <h5 class="alert-heading">
+            <i class="fas fa-exclamation-triangle"></i> Warning
+        </h5>
+        <p>You are now <strong>editing</strong> this page.</p>
     </div>
 
     <!-- Page Content -->
