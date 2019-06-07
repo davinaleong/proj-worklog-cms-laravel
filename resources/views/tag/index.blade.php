@@ -69,7 +69,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Project</th>
-                                <th>Code</th>
                                 <th>Created At</th>
                             </tr>
                             </thead>
@@ -77,8 +76,8 @@
                             @foreach($projects as $project)
                                 <tr>
                                     <td>{{ $project->id }}</td>
-                                    <td>{{ $project->title_project }}</td>
-                                    <td><code>{{ $project->code_project }}</code></td>
+                                    <td>{{ $project->title_project }}
+                                        (<code>{{ $project->code_project }}</code>)</td>
                                     <td>{{ $project->humanCreatedAt() }}</td>
                                 </tr>
                             @endforeach
