@@ -30,6 +30,18 @@ class Company extends BaseModel
     }
 
     /**
+     * Returns the period_started_on in a human-readable format
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function fieldPeriodStartedOn()
+    {
+        $datetime = new \Datetime($this->attributes['period_started_on'], new \DatetimeZone($this->timezone()));
+        return $datetime->format($this->dateFormat('field_date'));
+    }
+
+    /**
      * Returns the period_ended_on in a human-readable format
      *
      * @return string
@@ -40,5 +52,18 @@ class Company extends BaseModel
         $datetime = new \DateTime($this->attributes['period_ended_on'], new \DateTimeZone($this->timezone()));
 
         return $datetime->format($this->dateFormat('date_only'));
+    }
+
+    /**
+     * Returns the period_ended_on in a human-readable format
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function fieldPeriodEndedOn()
+    {
+        $datetime = new \DateTime($this->attributes['period_ended_on'], new \DateTimeZone($this->timezone()));
+
+        return $datetime->format($this->dateFormat('field_date'));
     }
 }

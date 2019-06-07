@@ -6,6 +6,8 @@ return [
 
     'display' => 'd-m-Y H:i:s',
 
+    'field_date' => 'd-m-Y',
+
     'datetime' => 'd M Y, h:i a',
 
     'date_only' => 'd M Y',
