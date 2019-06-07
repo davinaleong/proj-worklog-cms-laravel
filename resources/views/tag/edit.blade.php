@@ -4,6 +4,7 @@
     <!-- Page Sub-Heading -->
     <h2 class="h4 mb-3 text-gray-800"><i class="fas fa-fw fa-tags"></i> Tags</h2>
 
+    @include('partials.message-alert')
     @include('partials.error-alert')
 
     <!-- Warning Alert -->
@@ -57,12 +58,12 @@
                                                 <div class="col">
                                                     <input type="text" name="company[{{ $company->id }}][title]"
                                                            value="{{ $company->title_company }}"
-                                                           class="form-control form-control-sm" required>
+                                                           class="form-control form-control-sm">
                                                 </div>
                                                 <div class="col-3">
                                                     <input type="text" name="company[{{ $company->id }}][code]"
                                                            value="{{ $company->code_company }}"
-                                                           class="form-control form-control-sm" required>
+                                                           class="form-control form-control-sm">
                                                 </div>
                                             </div>
                                         </td>
@@ -70,13 +71,13 @@
                                             <div class="input-group input-group-sm">
                                                 <input type="date" name="company[{{ $company->id }}][period_started_on]"
                                                        value="{{ $company->fieldPeriodStartedOn() }}"
-                                                       class="form-control" required>
+                                                       class="form-control">
                                                 <div class="input-group-prepend input-group-append">
                                                     <div class="input-group-text">-</div>
                                                 </div>
                                                 <input type="date" name="company[{{ $company->id }}][period_ended_on]"
                                                        value="{{ $company->fieldPeriodEndedOn() }}"
-                                                       class="form-control" required>
+                                                       class="form-control">
                                             </div>
                                         </td>
                                         <td>
@@ -152,12 +153,12 @@
                                         <td>
                                             <input type="text" name="project[{{ $project->id }}][title]"
                                                    class="form-control form-control-sm"
-                                                   value="{{ $project->title_project }}" required>
+                                                   value="{{ $project->title_project }}">
                                         </td>
                                         <td>
                                             <input type="text" name="project[{{ $project->id }}][code]"
                                                    class="form-control form-control-sm"
-                                                   value="{{ $project->code_project }}" required>
+                                                   value="{{ $project->code_project }}">
                                         </td>
                                         <td>
                                             <div class="form-check">
@@ -306,19 +307,19 @@
                                     <tr>
                                         <td>{{ $dayType->id }}</td>
                                         <td>
-                                            <input type="text" name="dayType[{{ $dayType->id }}][title]"
+                                            <input type="text" name="daytype[{{ $dayType->id }}][title]"
                                                    class="form-control form-control-sm"
-                                                   value="{{ $dayType->title_type }}" required>
+                                                   value="{{ $dayType->title_type }}">
                                         </td>
                                         <td>
-                                            <input type="text" name="dayType[{{ $dayType->id }}][code]"
+                                            <input type="text" name="daytype[{{ $dayType->id }}][code]"
                                                    class="form-control form-control-sm"
-                                                   value="{{ $dayType->code_type }}" required>
+                                                   value="{{ $dayType->code_type }}">
                                         </td>
                                         <td>
                                             <div class="input-group input-group-sm mb-3">
-                                                <input type="text" name="dayType[{{ $dayType->id }}][icon_fa]" class="form-control"
-                                                       value="{{ $dayType->icon_fa }}" required>
+                                                <input type="text" name="daytype[{{ $dayType->id }}][icon_fa]" class="form-control"
+                                                       value="{{ $dayType->icon_fa }}">
                                                 <div class="input-group-append">
                                                   <span class="input-group-text" id="basic-addon2">
                                                     <i class="{{ $dayType->icon_fa }}"></i>
@@ -327,14 +328,14 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <input type="color" name="dayType[{{ $dayType->id }}][color_hex]"
+                                            <input type="color" name="daytype[{{ $dayType->id }}][color_hex]"
                                                    class="form-control form-control-sm"
-                                                   value="{{ $dayType->color_hex }}" required>
+                                                   value="{{ $dayType->color_hex }}">
                                         </td>
                                         <td>
                                             <div class="form-check">
                                                 <input class="form-check-input position-static" type="checkbox"
-                                                       name="dayType[{{ $dayType->id }}][remove]" value="remove">
+                                                       name="daytype[{{ $dayType->id }}][remove]" value="remove">
                                             </div>
                                         </td>
                                     </tr>

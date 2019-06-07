@@ -16,6 +16,9 @@
         </div>
     </div>
 
+    @include('partials.message-alert')
+    @include('partials.error-alert')
+
     <!-- Page Content -->
     <div class="row">
         <!-- Companies Card-Table -->

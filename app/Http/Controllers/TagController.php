@@ -69,88 +69,71 @@ class TagController extends Controller
         $field_key = strtolower($model);
         $count = request('count');
 
-        if ($model == 'Year') {
-            Year::truncate();
+        switch ($model) {
+            case 'Company':
+                Company::truncate();
 
-            for ($i = 1; $i <= $count; ++$i) {
-                if (request($field_key.'.'.$i.'.remove') != 'remove') {
-                    Year::create([
-                        'title_year' => request($field_key.'.'.$i.'.title')
-                    ]);
+                for ($i = 1; $i <= $count; ++$i) {
+                    if (request($field_key.'.'.$i.'.remove') != 'remove') {
+                        Company::create([
+                            'title_company' => request($field_key.'.'.$i.'.title'),
+                            'code_company' => request($field_key.'.'.$i.'.code'),
+                            'period_started_on' => request($field_key.'.'.$i.'.period_started_on'),
+                            'period_ended_on' => request($field_key.'.'.$i.'.period_ended_on')
+                        ]);
+                    }
                 }
-            }
 
-            $formProcessed = true;
+                $formProcessed = true;
+                break;
+
+            case 'Project':
+                Project::truncate();
+
+                for ($i = 1; $i <= $count; ++$i) {
+                    if (request($field_key.'.'.$i.'.remove') != 'remove') {
+                        Project::create([
+                            'title_project' => request($field_key.'.'.$i.'.title'),
+                            'code_project' => request($field_key.'.'.$i.'.code')
+                        ]);
+                    }
+                }
+
+                $formProcessed = true;
+                break;
+
+            case 'Year':
+                Year::truncate();
+
+                for ($i = 1; $i <= $count; ++$i) {
+                    if (request($field_key.'.'.$i.'.remove') != 'remove') {
+                        Year::create([
+                            'title_year' => request($field_key.'.'.$i.'.title')
+                        ]);
+                    }
+                }
+
+                $formProcessed = true;
+                break;
+
+
+            case 'DayType':
+                DayType::truncate();
+
+                for ($i = 1; $i <= $count; ++$i) {
+                    if (request($field_key.'.'.$i.'.remove') != 'remove') {
+                        DayType::create([
+                            'title_type' => request($field_key.'.'.$i.'.title'),
+                            'code_type' => request($field_key.'.'.$i.'.code'),
+                            'icon_fa' => request($field_key.'.'.$i.'.icon_fa'),
+                            'color_hex' => request($field_key.'.'.$i.'.color_hex')
+                        ]);
+                    }
+                }
+
+                $formProcessed = true;
+                break;
         }
-
-//        switch ($model) {
-//            case 'Company':
-//                Company::truncate();
-//                for ($i = 0; $i < $count; ++$i) {
-//                    if (request('company.'.$i.'.remove') != 'remove') {
-//                        Company::create([
-//                            'title_company' => request('company.'.$i.'.title'),
-//                            'code_company' => request('company.'.$i.'.code'),
-//                            'period_started_on' =>
-//                                $this::formatDate(
-//                                    request('company.'.$i.'.period_started_on'),
-//                                    config('date_formats.mysql')
-//                                ),
-//                            'period_ended_on' =>
-//                                $this::formatDate(
-//                                    request('company.'.$i.'.period_ended_on'),
-//                                    config('date_formats.mysql')
-//                                )
-//                        ]);
-//
-//                        $formProcessed = true;
-//                    }
-//                }
-//                break;
-//
-//            case 'Project':
-//                Project::truncate();
-//                for ($i = 0; $i < $count; ++$i) {
-//                    if (request('project.'.$i.'.remove') != 'remove') {
-//                        Project::create([
-//                            'title_project' => request('project.'.$i.'.title'),
-//                            'code_project' => request('project.'.$i.'.code'),
-//                        ]);
-//
-//                        $formProcessed = true;
-//                    }
-//                }
-//                break;
-//
-//            case 'Year':
-//                Year::truncate();
-//                for ($i = 0; $i < $count; ++$i) {
-//                    if (request('year.'.$i.'.remove') != 'remove') {
-//                        Year::create([
-//                            'title_year' => request('year.'.$i.'.title')
-//                        ]);
-//
-//                        $formProcessed = true;
-//                    }
-//                }
-//                break;
-//
-//            case 'DayType':
-//                DayType::truncate();
-//                for ($i = 0; $i < $count; ++$i) {
-//                    if (request('dayType.'.$i.'.remove' != 'remove')) {
-//                        DayType::create([
-//                            'title_dayType' => request('dayType.'.$i.'.title'),
-//                            'code_dayType' => request('dayType.'.$i.'.code'),
-//                            'icon_fa' => request('dayType.'.$i.'.icon_fa'),
-//                            'color_hex' => request('dayType.'.$i.'.color_hex')
-//                        ]);
-//
-//                        $formProcessed = true;
-//                    }
-//                }
-//                break;
-//        }
 
         if ($formProcessed) {
             return redirect()

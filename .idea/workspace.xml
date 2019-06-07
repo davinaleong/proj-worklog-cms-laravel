@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DayType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DayType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Year.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Year.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tag/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tag/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tag/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tag/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
+            <state relative-caret-position="496">
+              <caret line="135" column="9" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
@@ -67,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="231" column="82" selection-start-line="231" selection-start-column="82" selection-end-line="231" selection-end-column="82" />
+            <state relative-caret-position="336">
+              <caret line="337" column="65" selection-start-line="337" selection-start-column="65" selection-end-line="337" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -132,7 +128,6 @@
         <option value="$PROJECT_DIR$/config/enum.php" />
         <option value="$PROJECT_DIR$/config/date.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/tag/index.blade.php" />
         <option value="$PROJECT_DIR$/app/BaseModel.php" />
         <option value="$PROJECT_DIR$/config-docker/app-startup.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
@@ -156,8 +151,9 @@
         <option value="$PROJECT_DIR$/app/Company.php" />
         <option value="$PROJECT_DIR$/app/DayType.php" />
         <option value="$PROJECT_DIR$/app/Project.php" />
-        <option value="$PROJECT_DIR$/resources/views/tag/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tag/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TagController.php" />
+        <option value="$PROJECT_DIR$/resources/views/tag/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -256,8 +252,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="22" />
-    <option name="y" value="35" />
+    <option name="x" value="21" />
+    <option name="y" value="39" />
     <option name="width" value="1400" />
     <option name="height" value="768" />
   </component>
@@ -396,15 +392,15 @@
       <workItem from="1559561170387" duration="764000" />
       <workItem from="1559762003714" duration="4744000" />
       <workItem from="1559863216513" duration="20412000" />
-      <workItem from="1559942179189" duration="911000" />
+      <workItem from="1559942179189" duration="2495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79699000" />
+    <option name="totallyTimeSpent" value="81283000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="35" width="1400" height="768" extended-state="0" />
+    <frame x="21" y="39" width="1400" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.2569956" />
@@ -679,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tag/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3066">
-          <caret line="146" column="77" selection-start-line="146" selection-start-column="77" selection-end-line="146" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-docker/bootstrap.sh" />
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -839,20 +828,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/tag/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="231" column="82" selection-start-line="231" selection-start-column="82" selection-end-line="231" selection-end-column="82" />
+        <state relative-caret-position="-308">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="74" column="30" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
+        <state relative-caret-position="496">
+          <caret line="135" column="9" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="337" column="65" selection-start-line="337" selection-start-column="65" selection-end-line="337" selection-end-column="65" />
         </state>
       </provider>
     </entry>
