@@ -26,6 +26,7 @@
                     <!-- Companies Table Form -->
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
+                            @csrf
                             {{ method_field('PUT') }}
                             <input type="hidden" name="model" value="Company">
                             <input type="hidden" name="count" value="{{ count($companies) }}">
@@ -90,7 +91,7 @@
                                 <tfoot>
                                 <tr>
                                     <td colspan="3">
-                                        <button type="button" class="btn btn-sm btn-primary shadow-sm">
+                                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                                             <i class="fas fa-check fa-sm"></i> Submit
                                         </button>
                                         <button type="reset" class="btn btn-sm btn-link text-secondary">
@@ -122,6 +123,7 @@
                     <!-- Projects Form Table -->
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
+                            @csrf
                             {{ method_field('PUT') }}
                             <input type="hidden" name="model" value="Project">
                             <input type="hidden" name="count" value="{{ count($projects) }}">
@@ -169,7 +171,7 @@
                                 <tfoot>
                                 <tr>
                                     <td colspan="3">
-                                        <button type="button" class="btn btn-sm btn-primary shadow-sm">
+                                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                                             <i class="fas fa-check fa-sm"></i> Submit
                                         </button>
                                         <button type="reset" class="btn btn-sm btn-link text-secondary">
@@ -201,6 +203,7 @@
                     <!-- Years Form Table -->
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
+                            @csrf
                             {{ method_field('PUT') }}
                             <input type="hidden" name="model" value="Year">
                             <input type="hidden" name="count" value="{{ count($years) }}">
@@ -239,7 +242,7 @@
                                 </tbody>
                                 <tfoot>
                                 <td colspan="2">
-                                    <button type="button" class="btn btn-sm btn-primary shadow-sm">
+                                    <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                                         <i class="fas fa-check fa-sm"></i> Submit
                                     </button>
                                     <button type="reset" class="btn btn-sm btn-link text-secondary">
@@ -270,6 +273,7 @@
                     <!-- Day-types Form Table -->
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
+                            @csrf
                             {{ method_field('PUT') }}
                             <input type="hidden" name="model" value="DayType">
                             <input type="hidden" name="count" value="{{ count($dayTypes) }}">
@@ -338,7 +342,7 @@
                                 </tbody>
                                 <tfoot>
                                 <td colspan="4">
-                                    <button type="button" class="btn btn-sm btn-primary shadow-sm">
+                                    <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                                         <i class="fas fa-check fa-sm"></i> Submit
                                     </button>
                                     <button type="reset" class="btn btn-sm btn-link text-secondary">

@@ -22,13 +22,13 @@ Route::get('/pages/{pageName}', function($pageName) {
 Auth::routes(['register' => false]);
 
 Route::middleware('auth')->prefix('/jot')->group(function() {
-    Route::get('/home', 'Jot\HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-    Route::get('/tag', 'Jot\TagController@index')->name('tag.index');
-    Route::get('/tag/edit', 'Jot\TagController@edit')->name('tag.edit');
-    Route::put('/tag/update', 'Jot\TagController@update')->name('tag.update');
+    Route::get('/tag', 'TagController@index')->name('tag.index');
+    Route::get('/tag/edit', 'TagController@edit')->name('tag.edit');
+    Route::put('/tag/update', 'TagController@update')->name('tag.update');
 //    Route::put('/tag/update/years', 'TagController@update')->name('update.years');
 //    Route::put('/tag/update/companies', 'TagController@update')->name('update.companies');
 //    Route::put('/tag/update/projects', 'TagController@update')->name('update.projects');
