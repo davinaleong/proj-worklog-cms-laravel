@@ -11,7 +11,7 @@
 
     <!-- Page Content -->
     <div class="row">
-        
+
         <!-- Companies Table -->
         <div class="col-12">
             <div class="card shadow mb-4">
@@ -24,7 +24,7 @@
                             <!-- Companies Table Form -->
                             {{ method_field('PUT') }}
                             <input type="hidden" name="table" value="companies">
-                            <input type="hidden" name="count_company" value="{{ count($companies) }}">
+                            <input type="hidden" name="count" value="{{ count($companies) }}">
 
                             <table class="table">
                                 <thead>
@@ -50,12 +50,12 @@
                                         <td>
                                             <div class="form-row">
                                                 <div class="col">
-                                                    <input type="text" name="company{{ $company->id }}-title_company"
+                                                    <input type="text" name="company[{{ $company->id }}][title]"
                                                            value="{{ $company->title_company }}"
                                                            class="form-control form-control-sm" required>
                                                 </div>
                                                 <div class="col-3">
-                                                    <input type="text" name="company{{ $company->id }}-code_company"
+                                                    <input type="text" name="company[{{ $company->id }}][code]"
                                                            value="{{ $company->code_company }}"
                                                            class="form-control form-control-sm" required>
                                                 </div>
@@ -63,13 +63,13 @@
                                         </td>
                                         <td>
                                             <div class="input-group input-group-sm">
-                                                <input type="date" name="company{{ $company->id }}-period_started_on"
+                                                <input type="date" name="company[{{ $company->id }}][period_started_on]"
                                                        value="{{ $company->fieldPeriodStartedOn() }}"
                                                        class="form-control" required>
                                                 <div class="input-group-prepend input-group-append">
                                                     <div class="input-group-text">-</div>
                                                 </div>
-                                                <input type="date" name="company{{ $company->id }}-period_ended_on"
+                                                <input type="date" name="company[{{ $company->id }}][period_ended_on]"
                                                        value="{{ $company->fieldPeriodEndedOn() }}"
                                                        class="form-control" required>
                                             </div>
@@ -77,7 +77,7 @@
                                         <td>
                                             <div class="form-check">
                                                 <input class="form-check-input position-static" type="checkbox"
-                                                       name="company{{ $company->id }}-remove" value="remove">
+                                                       name="company[{{ $company->id }}][remove]" value="remove">
                                             </div>
                                         </td>
                                     </tr>
@@ -120,7 +120,7 @@
                         <div class="table-responsive">
                             {{ method_field('PUT') }}
                             <input type="hidden" name="table" value="projects">
-                            <input type="hidden" name="projects-count" value="{{ count($companies) }}">
+                            <input type="hidden" name="count" value="{{ count($companies) }}">
 
                             <table class="table">
                                 <thead>
@@ -144,19 +144,19 @@
                                     <tr>
                                         <td>{{ $project->id }}</td>
                                         <td>
-                                            <input type="text" name="project{{ $project->id }}-title_project"
+                                            <input type="text" name="project[{{ $project->id }}][title]"
                                                    class="form-control form-control-sm"
                                                    value="{{ $project->title_project }}" required>
                                         </td>
                                         <td>
-                                            <input type="text" name="project{{ $project->id }}-code_project"
+                                            <input type="text" name="project[{{ $project->id }}][code]"
                                                    class="form-control form-control-sm"
                                                    value="{{ $project->code_project }}" required>
                                         </td>
                                         <td>
                                             <div class="form-check">
                                                 <input class="form-check-input position-static" type="checkbox"
-                                                       name="project{{ $project->id }}-remove" value="remove">
+                                                       name="project[{{ $project->id }}][remove]" value="remove">
                                             </div>
                                         </td>
                                     </tr>
@@ -199,7 +199,7 @@
                         <div class="table-responsive">
                             {{ method_field('PUT') }}
                             <input type="hidden" name="table" value="years">
-                            <input type="hidden" name="years-count" value="{{ count($years) }}">
+                            <input type="hidden" name="count" value="{{ count($years) }}">
 
                             <table class="table">
                                 <thead>
@@ -220,14 +220,14 @@
                                     <tr>
                                         <td>{{ $year->id }}</td>
                                         <td>
-                                            <input type="text" name="year{{ $year->id }}-name"
+                                            <input type="text" name="year[{{ $year->id }}][title]"
                                                    class="form-control form-control-sm"
                                                    value="{{ $year->title_year }}" required>
                                         </td>
                                         <td>
                                             <div class="form-check">
                                                 <input class="form-check-input position-static" type="checkbox"
-                                                       name="year{{ $year->id }}-remove" value="remove">
+                                                       name="year[{{ $year->id }}][remove]" value="remove">
                                             </div>
                                         </td>
                                     </tr>
@@ -268,7 +268,7 @@
                         <div class="table-responsive">
                             {{ method_field('PUT') }}
                             <input type="hidden" name="table" value="dayTypes">
-                            <input type="hidden" name="dayTypes-count" value="{{ count($dayTypes) }}">
+                            <input type="hidden" name="count" value="{{ count($dayTypes) }}">
 
                             <table class="table">
                                 <thead>
@@ -277,7 +277,10 @@
                                         <label>ID</label>
                                     </th>
                                     <th>
-                                        <label>Name <span class="text-danger">*</span></label>
+                                        <label>Title <span class="text-danger">*</span></label>
+                                    </th>
+                                    <th>
+                                        <label>Code <span class="text-danger">*</span></label>
                                     </th>
                                     <th>
                                         <label>Icon (FA) <span class="text-danger">*</span></label>
@@ -295,30 +298,35 @@
                                     <tr>
                                         <td>{{ $dayType->id }}</td>
                                         <td>
-                                            <input type="text" name="dayType{{ $dayType->id }}-name"
+                                            <input type="text" name="dayType[{{ $dayType->id }}][title]"
                                                    class="form-control form-control-sm"
                                                    value="{{ $dayType->title_type }}" required>
                                         </td>
                                         <td>
+                                            <input type="text" name="dayType[{{ $dayType->id }}][code]"
+                                                   class="form-control form-control-sm"
+                                                   value="{{ $dayType->code_type }}" required>
+                                        </td>
+                                        <td>
                                             <div class="input-group input-group-sm mb-3">
-                                                <input type="text" name="dayType{{ $dayType->id }}-icon_fa" class="form-control"
+                                                <input type="text" name="dayType[{{ $dayType->id }}][icon_fa]" class="form-control"
                                                        value="{{ $dayType->icon_fa }}" required>
                                                 <div class="input-group-append">
-                                          <span class="input-group-text" id="basic-addon2">
-                                            <i class="{{ $dayType->icon_fa }}"></i>
-                                          </span>
+                                                  <span class="input-group-text" id="basic-addon2">
+                                                    <i class="{{ $dayType->icon_fa }}"></i>
+                                                  </span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            <input type="color" name="dayType{{ $dayType->id }}-color_hex"
+                                            <input type="color" name="dayType[{{ $dayType->id }}][color_hex]"
                                                    class="form-control form-control-sm"
                                                    value="{{ $dayType->color_hex }}" required>
                                         </td>
                                         <td>
                                             <div class="form-check">
                                                 <input class="form-check-input position-static" type="checkbox"
-                                                       name="dayType{{ $dayType->id }}-remove" value="remove">
+                                                       name="dayType[{{ $dayType->id }}][remove]" value="remove">
                                             </div>
                                         </td>
                                     </tr>
