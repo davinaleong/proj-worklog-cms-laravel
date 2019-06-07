@@ -8,6 +8,15 @@ use App\BaseModel;
 class Company extends BaseModel
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title_company', 'code_company', 'period_started_on', 'period_ended_on'
+    ];
+
+    /**
      * The attributes that should be cast to native types.
      *
      * @var array

@@ -49,7 +49,7 @@ class TagController extends Controller
             'model' => [
                 'required',
                 'string',
-                Rule::in(['companies', 'projects', 'years', 'dayTypes'])
+                Rule::in(['Company', 'Project', 'Year', 'DayType'])
             ],
             'count' => 'required|integer|gte:0',
 //            '*.*.title' => 'string',
@@ -70,16 +70,17 @@ class TagController extends Controller
         $count = request('count');
 
         if ($model == 'Year') {
-            $records = [];
-            for ($i = 0; $i < $count; ++$i) {
+            Year::truncate();
+
+            for ($i = 1; $i <= $count; ++$i) {
                 if (request($field_key.'.'.$i.'.remove') != 'remove') {
-                    array_push($records, [
-                        'title_year' => request($field_key.'.'.$i.'.title_year')
+                    Year::create([
+                        'title_year' => request($field_key.'.'.$i.'.title')
                     ]);
                 }
             }
 
-            DB::table('years')->insert($records);
+            $formProcessed = true;
         }
 
 //        switch ($model) {

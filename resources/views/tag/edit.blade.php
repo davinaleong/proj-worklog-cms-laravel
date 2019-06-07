@@ -229,7 +229,7 @@
                                         <td>
                                             <input type="text" name="year[{{ $year->id }}][title]"
                                                    class="form-control form-control-sm"
-                                                   value="{{ $year->title_year }}" required>
+                                                   value="{{ $year->title_year }}">
                                         </td>
                                         <td>
                                             <div class="form-check">
