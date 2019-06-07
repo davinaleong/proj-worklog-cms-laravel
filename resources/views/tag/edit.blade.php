@@ -23,12 +23,11 @@
                 <div class="card-body">
 
                     <h3 class="h5 mb-3 text-gray-800">Companies</h3>
-
+                    <!-- Companies Table Form -->
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
-                            <!-- Companies Table Form -->
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="table" value="companies">
+                            <input type="hidden" name="model" value="Company">
                             <input type="hidden" name="count" value="{{ count($companies) }}">
 
                             <table class="table">
@@ -124,8 +123,8 @@
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="table" value="projects">
-                            <input type="hidden" name="count" value="{{ count($companies) }}">
+                            <input type="hidden" name="model" value="Project">
+                            <input type="hidden" name="count" value="{{ count($projects) }}">
 
                             <table class="table">
                                 <thead>
@@ -203,7 +202,7 @@
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="table" value="years">
+                            <input type="hidden" name="model" value="Year">
                             <input type="hidden" name="count" value="{{ count($years) }}">
 
                             <table class="table">
@@ -272,7 +271,7 @@
                     <form method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="table" value="dayTypes">
+                            <input type="hidden" name="model" value="DayType">
                             <input type="hidden" name="count" value="{{ count($dayTypes) }}">
 
                             <table class="table">
