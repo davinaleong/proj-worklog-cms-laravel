@@ -277,8 +277,8 @@
                         <div class="table-responsive">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input id="model_daytype" type="hidden" name="model" value="DayType">
-                            <input id="count_daytype" type="hidden" name="count" value="{{ count($dayTypes) }}">
+                            <input id="model-daytype" type="hidden" name="model" value="DayType">
+                            <input id="count-daytype" type="hidden" name="count" value="{{ count($dayTypes) }}">
 
                             <table class="table">
                                 <thead>
@@ -343,7 +343,7 @@
                                 @endforeach
                                 </tbody>
                                 <tfoot>
-                                    <td colspan="4">
+                                    <td colspan="5">
                                         <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                                             <i class="fas fa-check fa-sm"></i> Submit
                                         </button>
@@ -352,7 +352,7 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <button id="add_daytype" type="button" name="daytype[add]"
+                                        <button id="add-daytype" type="button" name="daytype[add]"
                                                 class="btn btn-sm btn-link text-primary">
                                             <i class="fas fa-fw fa-plus"></i>
                                         </button>

@@ -67,8 +67,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-372">
-                  <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+                <state relative-caret-position="172">
+                  <caret line="345" column="50" selection-start-line="345" selection-start-column="50" selection-end-line="345" selection-end-column="50" />
                 </state>
               </provider>
             </entry>
@@ -89,8 +89,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/js/tag-edit-form.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="203">
-                  <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+                <state relative-caret-position="-1">
+                  <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -178,8 +178,8 @@
         <option value="$PROJECT_DIR$/resources/views/tag/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/work-log.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tag/edit.blade.php" />
         <option value="$PROJECT_DIR$/public/js/tag-edit-form.js" />
+        <option value="$PROJECT_DIR$/resources/views/tag/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -430,12 +430,12 @@
       <workItem from="1559762003714" duration="4744000" />
       <workItem from="1559863216513" duration="20412000" />
       <workItem from="1559942179189" duration="10913000" />
-      <workItem from="1560172176631" duration="6292000" />
+      <workItem from="1560172176631" duration="6925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95993000" />
+    <option name="totallyTimeSpent" value="96626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="39" width="1400" height="768" extended-state="0" />
@@ -861,17 +861,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/tag-edit-form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        <state relative-caret-position="162">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/tag-edit-form.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state relative-caret-position="172">
+          <caret line="345" column="50" selection-start-line="345" selection-start-column="50" selection-end-line="345" selection-end-column="50" />
         </state>
       </provider>
     </entry>
