@@ -29,8 +29,8 @@
                         <div class="table-responsive">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input id="model_company" type="hidden" name="model" value="Company">
-                            <input id="count_company" type="hidden" name="count" value="{{ count($companies) }}">
+                            <input id="model-company" type="hidden" name="model" value="Company">
+                            <input id="count-company" type="hidden" name="count" value="{{ count($companies) }}">
 
                             <table class="table">
                                 <thead>
@@ -100,7 +100,7 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <button id="add_company" type="button" name="company[add]"
+                                            <button id="add-company" type="button" name="company[add]"
                                                     class="btn btn-sm btn-link text-primary">
                                                 <i class="fas fa-fw fa-plus"></i>
                                             </button>
