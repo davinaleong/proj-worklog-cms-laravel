@@ -25,12 +25,12 @@
 
                     <h3 class="h5 mb-3 text-gray-800">Companies</h3>
                     <!-- Companies Table Form -->
-                    <form method="POST" action="{{ route('tag.update') }}">
+                    <form id="form-company" method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="model" value="Company">
-                            <input type="hidden" name="count" value="{{ count($companies) }}">
+                            <input id="model_company" type="hidden" name="model" value="Company">
+                            <input id="count_company" type="hidden" name="count" value="{{ count($companies) }}">
 
                             <table class="table">
                                 <thead>
@@ -49,7 +49,7 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbody-company">
                                 @foreach($companies as $company)
                                     <tr>
                                         <td>{{ $company->id }}</td>
@@ -90,21 +90,22 @@
                                 @endforeach
                                 </tbody>
                                 <tfoot>
-                                <tr>
-                                    <td colspan="3">
-                                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
-                                            <i class="fas fa-check fa-sm"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-sm btn-link text-secondary">
-                                            <i class="fas fa-trash-alt fa-sm"></i> Cancel
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-link text-primary">
-                                            <i class="fas fa-fw fa-plus"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <button type="submit" class="btn btn-sm btn-primary shadow-sm">
+                                                <i class="fas fa-check fa-sm"></i> Submit
+                                            </button>
+                                            <button type="reset" class="btn btn-sm btn-link text-secondary">
+                                                <i class="fas fa-trash-alt fa-sm"></i> Cancel
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button id="add_company" type="button" name="company[add]"
+                                                    class="btn btn-sm btn-link text-primary">
+                                                <i class="fas fa-fw fa-plus"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                 </tfoot>
                             </table>
                         </div>
@@ -122,12 +123,12 @@
 
                     <h3 class="h5 mb-3 text-gray-800">Projects</h3>
                     <!-- Projects Form Table -->
-                    <form method="POST" action="{{ route('tag.update') }}">
+                    <form id="form-project" method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="model" value="Project">
-                            <input type="hidden" name="count" value="{{ count($projects) }}">
+                            <input id="model-project" type="hidden" name="model" value="Project">
+                            <input id="count-project" type="hidden" name="count" value="{{ count($projects) }}">
 
                             <table class="table">
                                 <thead>
@@ -146,7 +147,7 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbody-project">
                                 @foreach ($projects as $project)
                                     <tr>
                                         <td>{{ $project->id }}</td>
@@ -170,22 +171,22 @@
                                 @endforeach
                                 </tbody>
                                 <tfoot>
-                                <tr>
-                                    <td colspan="3">
-                                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
-                                            <i class="fas fa-check fa-sm"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-sm btn-link text-secondary">
-                                            <i class="fas fa-trash-alt fa-sm"></i> Cancel
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button type="button" name="company-add"
-                                                class="btn btn-sm btn-link text-primary">
-                                            <i class="fas fa-fw fa-plus"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <button type="submit" class="btn btn-sm btn-primary shadow-sm">
+                                                <i class="fas fa-check fa-sm"></i> Submit
+                                            </button>
+                                            <button type="reset" class="btn btn-sm btn-link text-secondary">
+                                                <i class="fas fa-trash-alt fa-sm"></i> Cancel
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button id="add-project" type="button" name="project[add]"
+                                                    class="btn btn-sm btn-link text-primary">
+                                                <i class="fas fa-fw fa-plus"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                 </tfoot>
                             </table>
                         </div>
@@ -202,12 +203,12 @@
 
                     <h3 class="h5 mb-3 text-gray-800">Years</h3>
                     <!-- Years Form Table -->
-                    <form method="POST" action="{{ route('tag.update') }}">
+                    <form id="form-year" method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="model" value="Year">
-                            <input type="hidden" name="count" value="{{ count($years) }}">
+                            <input id="model-year" type="hidden" name="model" value="Year">
+                            <input id="count-year" type="hidden" name="count" value="{{ count($years) }}">
 
                             <table class="table">
                                 <thead>
@@ -223,7 +224,7 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbody-year">
                                 @foreach ($years as $year)
                                     <tr>
                                         <td>{{ $year->id }}</td>
@@ -242,20 +243,20 @@
                                 @endforeach
                                 </tbody>
                                 <tfoot>
-                                <td colspan="2">
-                                    <button type="submit" class="btn btn-sm btn-primary shadow-sm">
-                                        <i class="fas fa-check fa-sm"></i> Submit
-                                    </button>
-                                    <button type="reset" class="btn btn-sm btn-link text-secondary">
-                                        <i class="fas fa-trash-alt fa-sm"></i> Cancel
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" name="company-add"
-                                            class="btn btn-sm btn-link text-primary">
-                                        <i class="fas fa-fw fa-plus"></i>
-                                    </button>
-                                </td>
+                                    <td colspan="2">
+                                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
+                                            <i class="fas fa-check fa-sm"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-sm btn-link text-secondary">
+                                            <i class="fas fa-trash-alt fa-sm"></i> Cancel
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button id="add-year" type="button"
+                                                class="btn btn-sm btn-link text-primary">
+                                            <i class="fas fa-fw fa-plus"></i>
+                                        </button>
+                                    </td>
                                 </tfoot>
                             </table>
                         </div>
@@ -272,12 +273,12 @@
 
                     <h3 class="h5 mb-3 text-gray-800">Day-types</h3>
                     <!-- Day-types Form Table -->
-                    <form method="POST" action="{{ route('tag.update') }}">
+                    <form id="form-daytype" method="POST" action="{{ route('tag.update') }}">
                         <div class="table-responsive">
                             @csrf
                             {{ method_field('PUT') }}
-                            <input type="hidden" name="model" value="DayType">
-                            <input type="hidden" name="count" value="{{ count($dayTypes) }}">
+                            <input id="model_daytype" type="hidden" name="model" value="DayType">
+                            <input id="count_daytype" type="hidden" name="count" value="{{ count($dayTypes) }}">
 
                             <table class="table">
                                 <thead>
@@ -302,7 +303,7 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbody-daytype">
                                 @foreach ($dayTypes as $dayType)
                                     <tr>
                                         <td>{{ $dayType->id }}</td>
@@ -342,20 +343,20 @@
                                 @endforeach
                                 </tbody>
                                 <tfoot>
-                                <td colspan="4">
-                                    <button type="submit" class="btn btn-sm btn-primary shadow-sm">
-                                        <i class="fas fa-check fa-sm"></i> Submit
-                                    </button>
-                                    <button type="reset" class="btn btn-sm btn-link text-secondary">
-                                        <i class="fas fa-trash-alt fa-sm"></i> Cancel
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" name="company-add"
-                                            class="btn btn-sm btn-link text-primary">
-                                        <i class="fas fa-fw fa-plus"></i>
-                                    </button>
-                                </td>
+                                    <td colspan="4">
+                                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
+                                            <i class="fas fa-check fa-sm"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-sm btn-link text-secondary">
+                                            <i class="fas fa-trash-alt fa-sm"></i> Cancel
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button id="add_daytype" type="button" name="daytype[add]"
+                                                class="btn btn-sm btn-link text-primary">
+                                            <i class="fas fa-fw fa-plus"></i>
+                                        </button>
+                                    </td>
                                 </tfoot>
                             </table>
                         </div>
@@ -367,4 +368,9 @@
 
     </div>
     <!-- ./row -->
+@endsection
+
+@section('scripts')
+    <!-- Page Level Scripts -->
+    <script src="{{ asset('js/tag-edit-form.js') }}"></script>
 @endsection
