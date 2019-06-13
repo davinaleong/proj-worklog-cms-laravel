@@ -5,7 +5,13 @@ $(document).ready(function() {
     $('#add-company').click(function() {
         console.log('#add-company clicked')
 
-        const count = $('#count-company').val()
+        const count = {
+            selector: '#count-company',
+            element: null,
+            value: null
+        };
+        count.element = $(count.selector)
+        count.value = count.element.val()
 
         $('#tbody-company').append(
             '<tr>\n' +
@@ -41,13 +47,21 @@ $(document).ready(function() {
             '    </td>\n' +
             '</tr>'
         )
+
+        updateCount(count)
     })
 
     // Project
     $('#add-project').click(function() {
         console.log('"#add-project clicked')
 
-        const count = $('#count-project').val()
+        const count = {
+            selector: '#count-project',
+            element: null,
+            value: null
+        };
+        count.element = $(count.selector)
+        count.value = count.element.val()
 
         $('#tbody-project').append(
             '<tr>\n' +
@@ -68,13 +82,25 @@ $(document).ready(function() {
             '    </td>\n' +
             '</tr>'
         )
+
+        updateCount(count)
     })
 
     // Year
     $('#add-year').click(function() {
         console.log('"#add-year" clicked')
 
-        const count = $('#count-year').val()
+        const objCount = {
+            selector: '#count-year',
+            element: null,
+            value: null
+        }
+
+        objCount.element = $(objCount.selector)
+        objCount.value = Number(objCount.element.val()) + 1
+        const count = objCount.value
+
+        console.log(`count: ${count}`)
 
         $('#tbody-year').append(
             '<tr>\n' +
@@ -91,13 +117,21 @@ $(document).ready(function() {
             '    </td>\n' +
             '</tr>'
         )
+
+        objCount.element.val(objCount.value)
     })
 
     // Day Type
     $('#add-daytype').click(function() {
         console.log('#add-daytype clicked')
 
-        const count = $('#count-daytype').val()
+        const count = {
+            selector: '#count-daytype',
+            element: null,
+            value: null
+        };
+        count.element = $(count.selector)
+        count.value = count.element.val()
 
         $('#tbody-daytype').append(
             '<tr>\n' +
@@ -133,5 +167,12 @@ $(document).ready(function() {
             '    </td>\n' +
             '</tr>'
         )
+
+        updateCount(count)
     })
 })
+
+function updateCount(count, jqElement) {
+    count = Number(count) + 1
+    jqElement.val(count)
+}
