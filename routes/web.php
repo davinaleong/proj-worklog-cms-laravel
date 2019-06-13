@@ -19,8 +19,18 @@ Route::get('/pages/{pageName}', function($pageName) {
     return view("pages.$pageName");
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes(['register' => false]);
 
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::middleware('auth')->prefix('/jot')->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+    Route::get('/tag', 'TagController@index')->name('tag.index');
+    Route::get('/tag/edit', 'TagController@edit')->name('tag.edit');
+    Route::put('/tag/update', 'TagController@update')->name('tag.update');
+//    Route::put('/tag/update/years', 'TagController@update')->name('update.years');
+//    Route::put('/tag/update/companies', 'TagController@update')->name('update.companies');
+//    Route::put('/tag/update/projects', 'TagController@update')->name('update.projects');
+//    Route::put('/tag/update/daytypes', 'TagController@update')->name('update.daytypes');
+});

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLogActionsTable extends Migration
+class CreateDayTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateLogActionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('log_actions', function (Blueprint $table) {
+        Schema::create('day_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title_action');
-            $table->string('code_action');
+            $table->string('title_type')->nullable();
+            $table->string('code_type')->nullable();
+            $table->string('icon_fa')->nullable();
+            $table->string('color_hex')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateLogActionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('log_actions');
+        Schema::dropIfExists('day_types');
     }
 }

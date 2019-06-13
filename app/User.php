@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -53,11 +54,11 @@ class User extends Authenticatable
      */
     public function setPasswordAttribute($password)
     {
-        $this->attributes['password'] = bcrypt($password);
+        $this->attributes['password'] = Hash::make($password);
     }
 
     /**
-     * Display created_at in a human-readable format.
+     * Returns created_at in a human-readable format.
      */
     public function humanCreatedAt()
     {
@@ -66,7 +67,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Display updated_at in a human-readable format.
+     * Returns updated_at in a human-readable format.
      */
     public function humanUpdatedAt()
     {

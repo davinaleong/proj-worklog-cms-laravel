@@ -34,8 +34,8 @@
                 <a class="collapse-item" href="new-log.html"><i class="fas fa-fw fa-plus"></i> Add One</a>
 
                 <h6 class="collapse-header">Settings</h6>
-                <a class="collapse-item" href="settings.html">
-                    <i class="fas fa-fw fa-tags"></i> Edit Tags
+                <a class="collapse-item" href="{{ route('tag.index') }}">
+                    <i class="fas fa-fw fa-tags"></i> Manage Tags
                 </a>
             </div>
         </div>

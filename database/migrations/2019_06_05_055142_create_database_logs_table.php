@@ -16,7 +16,7 @@ class CreateDatabaseLogsTable extends Migration
         Schema::create('database_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id', false, true);
-            $table->string('log');
+            $table->string('log_db');
             $table->json('sources');
             $table->string('action');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

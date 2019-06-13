@@ -16,7 +16,7 @@ class CreateActivityLogsTable extends Migration
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id', false, true);
-            $table->string('log');
+            $table->string('log_activity');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
