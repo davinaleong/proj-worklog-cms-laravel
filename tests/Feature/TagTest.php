@@ -70,9 +70,6 @@ class TagTest extends TestCase
 
         // Assert for OK response
         $response->assertStatus(200);
-
-        // Assert for the page header of the page
-        $response->assertSeeText('Settings');
     }
 
     /**
@@ -81,6 +78,9 @@ class TagTest extends TestCase
     public function guest_cannot_access_edit_tags_page()
     {
         $this->withoutExceptionHandling();
+
+        // Expect a validation to exception to be thrown
+        $this->expectException(\Illuminate\Auth\AuthenticationException::class);
 
         // Attempt to go to edit tags form
         $response = $this->get(route('tag.edit'));
@@ -101,8 +101,8 @@ class TagTest extends TestCase
 
         // Declare form attributes
         $attributes = [
-            'new1-title_year' => '2020',
-            'new2-title_year' => '2015'
+            'year[1][title]' => '2020',
+            'year[2][title]' => '2015'
         ];
 
         // Attempt to submit form
