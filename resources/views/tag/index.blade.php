@@ -34,7 +34,6 @@
                                 <th>ID</th>
                                 <th>Company</th>
                                 <th>Period</th>
-                                <th>Created At</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,7 +45,6 @@
                                         (<code>{{ $company->code_company }}</code>)
                                     </td>
                                     <td>{{ $company->humanPeriodStartedOn() }} - {{ $company->humanPeriodEndedOn() }}</td>
-                                    <td>{{ $company->humanCreatedAt() }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -69,7 +67,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Project</th>
-                                <th>Created At</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -77,8 +74,8 @@
                                 <tr>
                                     <td>{{ $project->id }}</td>
                                     <td>{{ $project->title_project }}
-                                        (<code>{{ $project->code_project }}</code>)</td>
-                                    <td>{{ $project->humanCreatedAt() }}</td>
+                                        (<code>{{ $project->code_project }}</code>)
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -101,7 +98,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Year</th>
-                                <th>Created At</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -109,7 +105,6 @@
                                 <tr>
                                     <td>{{ $year->id }}</td>
                                     <td>{{ $year->title_year }}</td>
-                                    <td>{{ $year->humanCreatedAt() }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
