@@ -140,9 +140,6 @@
                                         <label>Project <span class="text-danger">*</span></label>
                                     </th>
                                     <th>
-                                        <label>Code <span class="text-danger">*</span></label>
-                                    </th>
-                                    <th>
                                         <label>Delete</label>
                                     </th>
                                 </tr>
@@ -152,14 +149,18 @@
                                     <tr>
                                         <td>{{ $project->id }}</td>
                                         <td>
-                                            <input type="text" name="project[{{ $project->id }}][title]"
-                                                   class="form-control form-control-sm"
-                                                   value="{{ $project->title_project }}">
-                                        </td>
-                                        <td>
-                                            <input type="text" name="project[{{ $project->id }}][code]"
-                                                   class="form-control form-control-sm"
-                                                   value="{{ $project->code_project }}">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <input type="text" name="company[{{ $project->id }}][title]"
+                                                           value="{{ $project->title_company }}"
+                                                           class="form-control form-control-sm">
+                                                </div>
+                                                <div class="col-3">
+                                                    <input type="text" name="company[{{ $company->id }}][code]"
+                                                           value="{{ $company->code_company }}"
+                                                           class="form-control form-control-sm">
+                                                </div>
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="form-check">
