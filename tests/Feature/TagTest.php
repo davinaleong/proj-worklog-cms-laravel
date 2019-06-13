@@ -202,29 +202,4 @@ class TagTest extends TestCase
         $response->assertStatus(302);
     }
 
-**
-* @test
-*/
-    public function user_successfully_deletes_a_year_record()
-    {
-        $this->withoutExceptionHandling();
-
-        // Sign in
-        $this->actingAs(factory(User::class)->create());
-
-        // Create some Year records
-        factory(Year::class)->create();
-
-        // Declare form attributes
-        $attributes = [
-            'year1-remove' => 'remove'
-        ];
-
-        // Attempt to submit form
-        $response = $this->put(route('tag.update'), $attributes);
-
-        // Assert for REDIRECT response to indicate successful form submission
-        $response->assertStatus(302);
-    }
-
 }

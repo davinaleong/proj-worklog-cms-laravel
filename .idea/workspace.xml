@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/TagTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/TagTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +79,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/Feature/TagTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="213">
-                  <caret line="195" column="10" lean-forward="true" selection-start-line="195" selection-start-column="10" selection-end-line="195" selection-end-column="10" />
+                <state relative-caret-position="191">
+                  <caret line="202" column="5" lean-forward="true" selection-start-line="202" selection-start-column="5" selection-end-line="202" selection-end-column="5" />
                   <folding>
                     <element signature="e#33#49#0#PHP" expanded="true" />
                     <element signature="e#339#775#0#PHP" />
@@ -91,6 +90,7 @@
                     <element signature="e#2209#3075#0#PHP" />
                     <element signature="e#3194#3845#0#PHP" />
                     <element signature="e#2209#2959#0#PHP" />
+                    <element signature="e#4645#5294#0#PHP" />
                   </folding>
                 </state>
               </provider>
@@ -379,12 +379,12 @@
       <workItem from="1559762003714" duration="4744000" />
       <workItem from="1559863216513" duration="20412000" />
       <workItem from="1559942179189" duration="10913000" />
-      <workItem from="1560172176631" duration="18840000" />
+      <workItem from="1560172176631" duration="19166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108541000" />
+    <option name="totallyTimeSpent" value="108867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="39" width="1400" height="768" extended-state="0" />
@@ -803,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/TagTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="195" column="10" lean-forward="true" selection-start-line="195" selection-start-column="10" selection-end-line="195" selection-end-column="10" />
+        <state relative-caret-position="191">
+          <caret line="202" column="5" lean-forward="true" selection-start-line="202" selection-start-column="5" selection-end-line="202" selection-end-column="5" />
           <folding>
             <element signature="e#33#49#0#PHP" expanded="true" />
             <element signature="e#339#775#0#PHP" />
@@ -814,6 +814,7 @@
             <element signature="e#2209#3075#0#PHP" />
             <element signature="e#3194#3845#0#PHP" />
             <element signature="e#2209#2959#0#PHP" />
+            <element signature="e#4645#5294#0#PHP" />
           </folding>
         </state>
       </provider>
