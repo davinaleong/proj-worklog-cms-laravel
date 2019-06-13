@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
 
-class TagsTest extends TestCase
+class TagTest extends TestCase
 {
     /**
      * @test
@@ -26,7 +26,7 @@ class TagsTest extends TestCase
         $this->actingAs(factory(User::class)->create());
 
         // Attempt to access tags page
-        $response = $this->get(route('tags.index'));
+        $response = $this->get(route('tag.index'));
 
         // Assert for OK response
         $response->assertStatus(200);
@@ -45,8 +45,11 @@ class TagsTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
+        // Expect a validation to exception to be thrown
+        $this->expectException(\Illuminate\Auth\AuthenticationException::class);
+
         // Attempt to access tags page
-        $response = $this->get(route('tags.edit'));
+        $response = $this->get(route('tag.edit'));
 
         // Assert for REDIRECT response
         $response->assertStatus(302);
@@ -63,7 +66,7 @@ class TagsTest extends TestCase
         $this->actingAs(factory(User::class)->create());
 
         // Attempt to access edit tags form
-        $response = $this->get(route('tags.edit'));
+        $response = $this->get(route('tag.edit'));
 
         // Assert for OK response
         $response->assertStatus(200);
@@ -80,7 +83,7 @@ class TagsTest extends TestCase
         $this->withoutExceptionHandling();
 
         // Attempt to go to edit tags form
-        $response = $this->get(route('tags.edit'));
+        $response = $this->get(route('tag.edit'));
 
         // Assert for REDIRECT response
         $response->assertStatus(302);
@@ -103,7 +106,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->put(route('tags.update.year'), $attributes);
+        $response = $this->put(route('tag.update'), $attributes);
 
         // Assert a REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -128,7 +131,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->put(route('tags.update.year'), $attributes);
+        $response = $this->put(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -157,7 +160,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->put(route('tags.update.company'), $attributes);
+        $response = $this->put(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -182,7 +185,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->put(route('tags.update.company'), $attributes);
+        $response = $this->put(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -207,7 +210,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->put(route('tags.update.projects'), $attributes);
+        $response = $this->put(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -235,7 +238,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->get(route('tags.update.projects'), $attributes);
+        $response = $this->get(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -260,7 +263,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->get(route('tags.update.daytypes'), $attributes);
+        $response = $this->get(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);
@@ -290,7 +293,7 @@ class TagsTest extends TestCase
         ];
 
         // Attempt to submit form
-        $response = $this->get(route('tags.update.daytypes'), $attributes);
+        $response = $this->get(route('tag.update'), $attributes);
 
         // Assert for REDIRECT response to indicate successful form submission
         $response->assertStatus(302);

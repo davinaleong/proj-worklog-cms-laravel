@@ -21,8 +21,8 @@ class CompanyTest extends TestCase
         $company = $this->newCompany();
 
         // Assert datetime output
-        $this->assertEquals('01 Jun 2019, 16:45:00', $company->humanPeriodStartedOn());
-        $this->assertEquals('01 Jun 2019, 16:45:00', $company->humanPeriodEndedOn());
+        $this->assertEquals('01 Jun 2019', $company->humanPeriodStartedOn());
+        $this->assertEquals('01 Jun 2019', $company->humanPeriodEndedOn());
     }
 
     /**
