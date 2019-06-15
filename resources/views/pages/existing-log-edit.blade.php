@@ -56,15 +56,15 @@
                         <div class="form-row">
                             <div class="col-8">
                                 <div class="form-group">
-                                    <label for="entry0-title">Day Title <span class="text-danger">*</span></label>
-                                    <input type="text" name="entry0-title" class="form-control"
+                                    <label for="entry[0][title]">Day Title <span class="text-danger">*</span></label>
+                                    <input type="text" name="entry[0][title]" class="form-control"
                                            placeholder="Entry Title" value="May 31" required>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="form-group">
-                                    <label for="entry0-type">Day-Type <span class="text-danger">*</span></label>
-                                    <select name="entry0-type" class="form-control" required>
+                                    <label for="entry[0][type]">Day-Type <span class="text-danger">*</span></label>
+                                    <select name="entry[0][type]" class="form-control" required>
                                         <option value="">- Select Day-type -</option>
                                         <option value="W">Work Day</option>
                                         <option value="M" selected>Medical Leave</option>
@@ -98,7 +98,7 @@
                                 <!-- Item #0 (count: 1) -->
                                 <tr>
                                     <td>
-                                        <select name="entry0-item0-project_code"
+                                        <select name="entry[0][item][0][project_code]"
                                                 class="form-control form-control-sm" required>
                                             <option value="">- Select Project Code</option>
                                             <option value="KLICK">Klick</option>
@@ -110,12 +110,12 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="text" name="entry0-item0-title"
+                                        <input type="text" name="entry[0][item][0][title]"
                                                class="form-control form-control-sm"
                                                value="Started on #61" required>
                                     </td>
                                     <td>
-                                        <button type="button" name="entry0-item0-cancel"
+                                        <button type="button" name="entry[0][item][0][cancel]"
                                                 class="btn btn-sm btn-link text-danger">
                                             <i class="fas fa-fw fa-trash-alt"></i>
                                         </button>
