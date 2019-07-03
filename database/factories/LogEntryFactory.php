@@ -10,7 +10,7 @@ $factory->define(\App\LogEntry::class, function (Faker $faker) {
         'log_id' => $faker->randomNumber(3),
         'user_id' => 1,
         'title_entry' => $faker->words(3, true),
-        'day_type' => $faker->randomElement(['W', 'A', 'P', 'M', 'C', 'B']),
-        'date' => $faker-date('Y-m-d H:i:s')
+        'code_type' => $faker->randomElement(['W', 'A', 'P', 'M', 'C', 'B']),
+        'date' => $faker->date('Y-m-d H:i:s')
     ];
 });

@@ -16,25 +16,18 @@ class WorkLogTablesSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1,10) as $i) {
-            $log = \factory(Log::class)->create([
-                'creator_id' => 1,
-                'title_log' => 'Week '.($i + 1),
-            ]);
+        factory(App\Log::class, 10)->create()->each(function ($log) {
 
-            foreach(range(1, 5) as $j) {
-                $entry = \factory(LogEntry::class)->create([
-                    'log_id' => $log->id,
-                    'title_entry' => 'Day '.($j + 1)
+            factory(App\LogEntry::class, 5)->create([
+                'log_id' => $log->id
+            ])->each(function($entry) {
+
+                factory(App\EntryItem::class, 3)->create([
+                    'log_entry_id' => $entry->id
                 ]);
 
-                foreach(range(1, 3) as $k) {
-                    \factory(EntryItem::class)->create([
-                        'log_entry_id' => $entry->id,
-                        'title_item' => 'Entry Item '.($k + 1)
-                    ]);
-                }
-            }
-        }
+            });
+
+        });
     }
 }
