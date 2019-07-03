@@ -2,6 +2,9 @@
 
 use Faker\Factory;
 use Illuminate\Database\Seeder;
+use App\Log;
+use App\LogEntry;
+use App\EntryItem;
 
 class WorkLogTablesSeeder extends Seeder
 {
@@ -15,12 +18,12 @@ class WorkLogTablesSeeder extends Seeder
         foreach (range(1,10) as $index) {
             $log = \factory(Log::class)->create();
             foreach(range(1, 5) as $index) {
-                $entry = \factory(Entry::class)->create([
+                $entry = \factory(LogEntry::class)->create([
                     'log_id' => $log->id
                 ]);
 
                 foreach(range(1, 3) as $index) {
-                    \factory(Item::class)->create([
+                    \factory(EntryItem::class)->create([
                         'item_id' => $entry->id
                     ]);
                 }
