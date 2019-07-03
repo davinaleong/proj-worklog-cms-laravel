@@ -16,7 +16,7 @@ class CreateLogEntriesTable extends Migration
         Schema::create('log_entries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('log_id', false, true);
-            $table->integer('creator_id', false, true);
+            $table->integer('user_id', false, true);
             $table->string('title_entry')->nullable();
             $table->string('code_type')->nullable();
             $table->date('date');

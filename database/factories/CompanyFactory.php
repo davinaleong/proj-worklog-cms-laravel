@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Company::class, function (Faker $faker) {
     return [
         'title_company' => $faker->words(3),
-        'code_company' => $faker->word(),
+        'code_company' => strtoupper($faker->word()),
         'period_started_on' => now(),
         'period_ended_on' => now()
     ];

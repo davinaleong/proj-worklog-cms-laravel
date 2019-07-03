@@ -8,8 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(\App\EntryItem::class, function (Faker $faker) {
     return [
         'entry_id' => $faker->randomNumber(3),
-        'creator_id' => $faker->randomNumber(3),
-        'title_item' => $faker->words(3),
-        'code_project' => strtoupper($faker->word),
+        'user_id' => 1,
+        'title_item' => $faker->words(3, true),
+        'code_project' => $faker->randomElement(['KLICK', 'SSO', 'PROJ', 'POC', 'LEARN']),
     ];
 });

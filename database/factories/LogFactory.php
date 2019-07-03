@@ -7,11 +7,11 @@ use Faker\Generator as Faker;
 
 $factory->define(Log::class, function (Faker $faker) {
     return [
-        'creator_id ' => $faker->randomNumber(3),
-        'title_log' => $faker->words(3),
-        'company_code' => strtoupper($faker->word),
-        'year_id' => $faker->randomNumber(3),
-        'remarks' => $faker->words(3),
+        'user_id ' => 1,
+        'title_log' => $faker->words(3, true),
+        'company_code' => 'TPA',
+        'year_id' => 5,
+        'remarks' => $faker->words(10, true),
         'published' => true
     ];
 });
