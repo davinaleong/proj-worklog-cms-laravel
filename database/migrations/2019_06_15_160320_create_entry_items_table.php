@@ -15,7 +15,7 @@ class CreateEntryItemsTable extends Migration
     {
         Schema::create('entry_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('entry_id', false, true);
+            $table->integer('log_entry_id', false, true);
             $table->integer('creator_id', false, true);
             $table->string('title_item')->nullable();
             $table->string('code_project')->nullable();
