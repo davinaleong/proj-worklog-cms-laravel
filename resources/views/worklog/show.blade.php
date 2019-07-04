@@ -32,7 +32,7 @@
 
                         <!-- Header Actions -->
                         <div class="col-auto">
-                            <a href="existing-log-edit.html" class="d-none d-sm-inline-block
+                            <a href="{{ route('worklog.edit', ['id' => $log->id]) }}" class="d-none d-sm-inline-block
                     btn btn-sm btn-outline-primary shadow-sm">
                                 <i class="fas fa-pen fa-sm"></i> Edit
                             </a>
@@ -41,55 +41,20 @@
 
                     <!-- Day List items (Tasks)-->
                     <ul class="list-group">
+                        @foreach ($log->entries as $entry)
                         <li class="list-group-item">
-                            <h5 class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 31</h5>
+                            <h5 style="color: {{ $entry->dayType['color_hex'] }}">
+                                <i class="{{ $entry->dayType['icon_fa'] }}"></i> {{ $entry->title_entry }}
+                            </h5>
 
                             <ol>
-                                <li><code class="wl-project-code">SSO</code>: Started on #61</li>
-                                <li><code class="wl-project-code">SSO</code>: Minor bug fixes on #60</li>
-                                <li><code class="wl-project-code">KLICK</code>: Assisted in testing mobile apps</li>
-                                <li><code class="wl-project-code">SSO</code>: Researched on <code class="wl-code">schema.org</code></li>
-                                <li><code class="wl-project-code">SSO</code>: Researched on Google Rich Snippets</li>
+                                @foreach ($entry->items as $item)
+                                <li><code class="wl-project-code">{{ $item->project['code_project'] }}</code>:&nbsp;
+                                    {{ $item->title_item }}</li>
+                                @endforeach
                             </ol>
                         </li>
-                        <li class="list-group-item">
-                            <h5 class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 30</h5>
-
-                            <ol>
-                                <li><code class="wl-project-code-others">Others</code>: Style examples</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: #issue-no</li>
-                                <li><code class="wl-project-code">PROJ</code>: Added <code class="wl-code">User</code> module</li>
-                                <li><code class="wl-project-code-others">Others</code>: Miscellaneous items with no direct relations to projects</li>
-                            </ol>
-                        </li>
-                        <li class="list-group-item">
-                            <h5 class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 29</h5>
-
-                            <ol>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                            </ol>
-                        </li>
-                        <li class="list-group-item">
-                            <h5 class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 28</h5>
-
-                            <ol>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                            </ol>
-                        </li>
-                        <li class="list-group-item">
-                            <h5 class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 27</h5>
-
-                            <ol>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                                <li><code class="wl-project-code">PROJ</code>: Task item</li>
-                            </ol>
-                        </li>
+                        @endforeach
                     </ul>
 
                 </div>

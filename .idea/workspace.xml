@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BaseModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/EntryItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EntryItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/LogEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/LogEntry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/worklog/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/worklog/show.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +41,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/worklog/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="378">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="e#773#822#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +53,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/worklog/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="382">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+              <folding>
+                <element signature="e#1979#1998#0#HTML" expanded="true" />
+                <element signature="e#2381#2387#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="387">
               <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="e#40#52#0#PHP" expanded="true" />
@@ -88,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/LogEntry.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1029">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+            <state relative-caret-position="382">
+              <caret line="31" column="67" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/EntryItem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="478">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -176,7 +175,6 @@
         <option value="$PROJECT_DIR$/public/js/work-log.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/worklog/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/EntryItem.php" />
         <option value="$PROJECT_DIR$/app/LogEntry.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
@@ -186,6 +184,7 @@
         <option value="$PROJECT_DIR$/app/BaseModel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" />
         <option value="$PROJECT_DIR$/app/Log.php" />
+        <option value="$PROJECT_DIR$/app/EntryItem.php" />
         <option value="$PROJECT_DIR$/resources/views/worklog/show.blade.php" />
       </list>
     </option>
@@ -386,12 +385,12 @@
       <workItem from="1560172176631" duration="19166000" />
       <workItem from="1561350335415" duration="1520000" />
       <workItem from="1562115728996" duration="10898000" />
-      <workItem from="1562246337567" duration="4148000" />
+      <workItem from="1562246337567" duration="4889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136268000" />
+    <option name="totallyTimeSpent" value="137009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="39" width="1400" height="768" extended-state="0" />
@@ -412,7 +411,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3287879" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3287879" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -702,27 +701,6 @@
     <entry file="file://$PROJECT_DIR$/.env.testing">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/worklog/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/LogEntry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/EntryItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -782,16 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Log.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -799,10 +767,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/EntryItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/worklog/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="e#773#822#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/LogEntry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="31" column="67" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/worklog/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="382">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding>
+            <element signature="e#1979#1998#0#HTML" expanded="true" />
+            <element signature="e#2381#2387#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
