@@ -29,4 +29,6 @@ Route::middleware('auth')->prefix('/jot')->group(function() {
     Route::get('/tag', 'TagController@index')->name('tag.index');
     Route::get('/tag/edit', 'TagController@edit')->name('tag.edit');
     Route::put('/tag/update', 'TagController@update')->name('tag.update');
+
+    Route::resource('worklog', 'WorkLogController');
 });
