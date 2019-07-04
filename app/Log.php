@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Log extends Model
+class Log extends BaseModel
 {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -27,7 +27,7 @@ class Log extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function year() {
-        return $this->hasOne('App\Year');
+        return $this->hasOne('App\Year', 'id', 'year_id');
     }
 
     /**

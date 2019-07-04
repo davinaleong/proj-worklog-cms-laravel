@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LogEntry extends Model
+class LogEntry extends BaseModel
 {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -38,5 +38,15 @@ class LogEntry extends Model
     public function dayType()
     {
         return $this->hasOne('App\DayType', 'code_type', 'code_type');
+    }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function titleDay()
+    {
+        $date = new \DateTime('date', new \DateTimeZone($this->timezone()));
+        return 'Day '.$date->format('d');
     }
 }

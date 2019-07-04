@@ -29,16 +29,18 @@ class WorkLogController extends Controller
      * @param Log $log
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Log $log)
+    public function show($id)
     {
-        return view('worklog.show');
+        return view('worklog.show', [
+            'log' => Log::find($id)
+        ]);
     }
 
     /**
      * @param Log $log
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Log $log)
+    public function edit($id)
     {
         return view('worklog.edit');
     }
