@@ -4,22 +4,19 @@
     <div class="row">
         @foreach ($logs as $log)
         <div class="col-xl-4 col-md-6 mb-3">
-            <div class="card shadow mb-4 clickable worklog-card">
+            <div class="card shadow mb-4 clickable clickable worklog-card"
+                 onclick="location.href='{{ route('worklog.show', ['id' => $log->id]) }}'">
                 <div class="card-body">
 
                     <h4 class="m-0 font-weight-bold text-secondary pb-3">{{ $log->title_log }}</h4>
-                    <p><span class="badge badge-primary">
+                    <p>
+                        <span class="badge badge-primary">
                             <i class="fas fa-fw fa-building"></i> {{ $log->company['title_company'] }}
                         </span>
                     </p>
 
-{{--                    <div class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 31</div>--}}
-{{--                    <div class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 30</div>--}}
-{{--                    <div class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 29</div>--}}
-{{--                    <div class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 28</div>--}}
-{{--                    <div class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> May 27</div>--}}
                     @foreach ($log->entries as $entry)
-                        <div class="wl-text-medical-leave"><i class="fas fa-fw fa-stethoscope"></i> {{ $entry->title_entry }}</div>
+                        <div style="color: {{ $entry->dayType['color_hex'] }}"><i class="{{ $entry->dayType['icon_fa'] }}"></i> {{ $entry->title_entry }}</div>
                     @endforeach
 
                 </div>

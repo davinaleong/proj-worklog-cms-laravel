@@ -26,7 +26,7 @@ const jqObjects = [];
 $(document).ready(function () {
     console.log('work-log script loaded')
 
-  jqObjects.push(worklogCard)
+  // jqObjects.push(worklogCard)
   jqObjects.push(worklogCardEdit)
   jqObjects.push(worklogCardNew)
 
