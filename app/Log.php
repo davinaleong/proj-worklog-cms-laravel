@@ -27,6 +27,6 @@ class Log extends Model
      */
     public function company()
     {
-        return $this->hasOne('App\Company', 'code_company');
+        return $this->hasOne('App\Company', 'code_company', 'code_company');
     }
 }
