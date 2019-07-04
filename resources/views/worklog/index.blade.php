@@ -5,7 +5,7 @@
         @foreach ($logs as $log)
         <div class="col-xl-4 col-md-6 mb-3">
             <div class="card shadow mb-4 clickable clickable worklog-card"
-                 onclick="location.href='{{ route('worklog.show', ['id' => $log->id]) }}'">
+                 onclick="goto('{{ route('worklog.show', ['id' => $log->id]) }}')">
                 <div class="card-body">
 
                     <h4 class="m-0 font-weight-bold text-secondary pb-3">{{ $log->title_log }}</h4>
