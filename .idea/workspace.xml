@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/worklog/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/worklog/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/worklog/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/worklog/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/EntryItemFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/EntryItemFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/LogEntryFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/LogEntryFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/worklog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/worklog/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,14 +41,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="315">
+              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
               <folding>
                 <element signature="e#40#52#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/worklog/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="113" lean-forward="true" selection-start-line="17" selection-start-column="113" selection-end-line="17" selection-end-column="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Log.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -64,15 +79,6 @@
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="98" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -142,7 +148,6 @@
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/EntryItem.php" />
         <option value="$PROJECT_DIR$/app/LogEntry.php" />
-        <option value="$PROJECT_DIR$/app/Log.php" />
         <option value="$PROJECT_DIR$/database/factories/CompanyFactory.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_15_155715_create_log_entries_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_15_160320_create_entry_items_table.php" />
@@ -150,16 +155,17 @@
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/WorkLogTablesSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/LogFactory.php" />
-        <option value="$PROJECT_DIR$/database/factories/LogEntryFactory.php" />
-        <option value="$PROJECT_DIR$/database/factories/EntryItemFactory.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogController.php" />
-        <option value="$PROJECT_DIR$/resources/views/worklog/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/worklog/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/worklog/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/worklog/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" />
+        <option value="$PROJECT_DIR$/resources/views/worklog/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/factories/LogEntryFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/EntryItemFactory.php" />
+        <option value="$PROJECT_DIR$/app/Log.php" />
       </list>
     </option>
   </component>
@@ -288,6 +294,17 @@
             <path>
               <item name="proj-worklog-cms-laravel" type="b2602c69:ProjectViewProjectNode" />
               <item name="proj-worklog-cms-laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-worklog-cms-laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proj-worklog-cms-laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-worklog-cms-laravel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proj-worklog-cms-laravel" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -375,12 +392,12 @@
       <workItem from="1559942179189" duration="10913000" />
       <workItem from="1560172176631" duration="19166000" />
       <workItem from="1561350335415" duration="1520000" />
-      <workItem from="1562115728996" duration="6038000" />
+      <workItem from="1562115728996" duration="6894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127260000" />
+    <option name="totallyTimeSpent" value="128116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="39" width="1400" height="768" extended-state="0" />
@@ -436,13 +453,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3960" />
@@ -520,13 +530,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env.testing">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5301">
-          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/tags-edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -639,13 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/EntryItem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -722,31 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/LogEntryFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/EntryItemFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/worklog/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/worklog/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -791,13 +766,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="52" column="10" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="52" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tag/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1407">
+          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        <state relative-caret-position="315">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
             <element signature="e#40#52#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/LogEntryFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/EntryItemFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/worklog/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="113" lean-forward="true" selection-start-line="17" selection-start-column="113" selection-end-line="17" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
         </state>
       </provider>
     </entry>

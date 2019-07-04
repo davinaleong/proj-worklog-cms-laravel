@@ -12,7 +12,9 @@ class WorkLogController extends Controller
      */
     public function index()
     {
-        return view('worklog.index');
+        return view('worklog.index', [
+            'logs' => Log::all()->sortByDesc('id')
+        ]);
     }
 
     /**

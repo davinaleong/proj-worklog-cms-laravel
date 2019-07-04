@@ -14,4 +14,19 @@ class Log extends Model
     public function entries() {
         return $this->hasMany('App\LogEntry');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function year() {
+        return $this->hasOne('App\Year');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function company()
+    {
+        return $this->hasOne('App\Company', 'code_company');
+    }
 }
