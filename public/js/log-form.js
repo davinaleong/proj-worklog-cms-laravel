@@ -2,10 +2,21 @@ $(document).ready(function () {
     console.log('log-form loaded')
 
     $('#entry0-add').click(function () {
-        const itemCount = $('#entry0-count').val();
+        const itemCount = $('#entry0-count').val()
+        console.log('itemCount', itemCount)
+
+        for (let i = 0; i < itemCount; ++i) {
+            const removeBtn = '#entry0-item' + i + '-remove'
+            const item = '#entry0-item' + i + '-row'
+            $(removeBtn).click(function () {
+                console.log(removeBtn + ' clicked')
+                console.log('item to remove:', item)
+                $(item).remove()
+            })
+        }
 
         $('#entry0-tbody').append(
-            '<tr id="entry0-item' + itemCount + '">\n' +
+            '<tr id="entry0-item' + itemCount + '-row">\n' +
             '  <td>\n' +
             '      <select name="entry[0][' + itemCount + '][project_code]"\n' +
             '              class="form-control form-control-sm" required>\n' +
@@ -31,4 +42,7 @@ $(document).ready(function () {
             '</tr>'
         );
     })
+
+    itemCount += 1;
+    $('#entry0-count').val(itemCount)
 })

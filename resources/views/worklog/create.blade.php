@@ -94,7 +94,7 @@
                                         </thead>
                                         <tbody id="entry{{ $i }}-tbody">
                                         <!-- Item #0 (count: 1) -->
-                                        <tr id="entry{{$i}}-item0">
+                                        <tr id="entry{{$i}}-item0-row">
                                             <td>
                                                 <select name="entry[{{ $i }}][0][project_code]"
                                                         class="form-control form-control-sm" required>
