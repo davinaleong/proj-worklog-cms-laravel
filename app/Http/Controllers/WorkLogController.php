@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Log;
+use App\Year;
 use Illuminate\Http\Request;
 
 class WorkLogController extends Controller
@@ -13,7 +14,7 @@ class WorkLogController extends Controller
     public function index()
     {
         return view('worklog.index', [
-            'logs' => Log::all()->sortByDesc('id')
+            'years' => Year::all()->sortByDesc('id')
         ]);
     }
 

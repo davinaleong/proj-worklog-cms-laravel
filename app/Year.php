@@ -14,4 +14,12 @@ class Year extends BaseModel
     protected $fillable = [
         'title_year'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function logs()
+    {
+        return $this->hasMany('App\Log');
+    }
 }
