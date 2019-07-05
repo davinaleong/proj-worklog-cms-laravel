@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\DayType;
 use App\Log;
+use App\Project;
 use App\Year;
 use Illuminate\Http\Request;
 
@@ -23,7 +25,10 @@ class WorkLogController extends Controller
      */
     public function create()
     {
-        return view('worklog.create');
+        return view('worklog.create', [
+            'dayTypes' => DayType::all()->sortBy('title_type'),
+            'projects' => Project::all()->sortBy('title_project')
+        ]);
     }
 
     /**
