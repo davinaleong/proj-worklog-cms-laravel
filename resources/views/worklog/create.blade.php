@@ -150,3 +150,6 @@
     </div>
 @endsection
 
+@section('scripts')
+    <script src="{{ asset('js/log-form.js') }}"></script>
+@endsection
