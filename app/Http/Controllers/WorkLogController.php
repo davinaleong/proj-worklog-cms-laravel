@@ -87,49 +87,53 @@ class WorkLogController extends Controller
             ]
         ]);
 
-        // TODO: Save data
-        $entries = [];
-        $items = [];
+//        var_dump(request('entries.0.title_entry'));
+//        echo '<hr>';
+//        var_dump(request('entries.0.items'));
+//        echo '<hr>';
+//        var_dump(request('entries.0.items.0.title_item'));
 
         $log = Log::create([
             'user_id' => Auth::id(),
             'title_log' => request('title_log'),
             'code_company' => request('code_company'),
             'year_id' => request('year_id'),
-            'published' => request('published') ? 1 : 0
+            'published' => request()->has('published') ? 1 : 0
         ]);
-        $message = 'New Log created.';
 
-        foreach (request('entries') as $entryKey=>$entry) {
+        $message = 'New Log created.';
+        $entries = request('entries');
+        $createdEntries = [];
+        $createdItems = [];
+
+        foreach ($entries as $entryKey=>$entry) {
             $createdEntry = LogEntry::create([
                 'user_id' => Auth::id(),
                 'log_id' => $log->id,
-                'title_entry' => request('entries.'.$entryKey.'.title_entry'),
-                'code_type' => request('entries.'.$entryKey.'.code_type'),
+                'title_entry' => $entry['title_entry'],
+                'code_type' => $entry['code_type'],
                 'date' => '2019-01-01'
             ]);
 
-            foreach (request('entries.'.$entryKey.'.items') as $itemKey=>$item) {
-                if (! request('entries.'.$entryKey.'items'.$itemKey.'.remove')) {
-                    $items[] = EntryItem::create([
+            foreach ($entry['items'] as $itemKey=>$item) {
+                //if ($item['remove'] == 'remove') {
+                    $createdItems[] = EntryItem::create([
                         'user_id' => Auth::id(),
                         'log_entry_id' => $createdEntry->id,
-                        'title_item' =>
-                            request('entries.'.$entryKey.'items'.$itemKey.'.title_item'),
-                        'code_project' =>
-                            request('entries.'.$entryKey.'items'.$itemKey.'.code_project')
+                        'title_item' => $item['title_item'],
+                        'code_project' => $item['code_project']
                     ]);
-                }
+                //}
             }
 
-            $entries[] = $createdEntry;
+            $createdEntries[] = $createdEntry;
         }
 
-        if (count($entries) >= 5) {
+        if (count($createdEntries) >= 5) {
             // TODO: Redirect to show log page
             $message .=
-                '<br>Entries inserted: '.count($entries).
-                '<br>Items inserted: '.count($items);
+                '<br>Entries inserted: '.count($createdEntries).
+                '<br>Items inserted: '.count($createdItems);
             return redirect()
                 ->action('WorkLogController@show', ['id' => $log->id])
                 ->with(['message' => $message]);
