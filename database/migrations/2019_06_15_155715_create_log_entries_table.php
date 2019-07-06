@@ -19,7 +19,7 @@ class CreateLogEntriesTable extends Migration
             $table->integer('user_id', false, true);
             $table->string('title_entry')->nullable();
             $table->string('code_type')->nullable();
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }
