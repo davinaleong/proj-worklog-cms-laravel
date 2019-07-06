@@ -10,7 +10,9 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
 
-                    <!-- Day-Task Header -->
+                @include('partials.message-alert')
+
+                <!-- Day-Task Header -->
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
 

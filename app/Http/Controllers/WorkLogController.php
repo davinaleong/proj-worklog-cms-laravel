@@ -96,7 +96,7 @@ class WorkLogController extends Controller
             'title_log' => request('title_log'),
             'code_company' => request('code_company'),
             'year_id' => request('year_id'),
-            'published' => request('published') == 'published' ? 1 : 0
+            'published' => request('published') ? 1 : 0
         ]);
         $message = 'New Log created.';
 
@@ -108,6 +108,19 @@ class WorkLogController extends Controller
                 'code_type' => request('entries.'.$entryKey.'.code_type'),
                 'date' => '2019-01-01'
             ]);
+
+            foreach (request('entries.'.$entryKey.'.items') as $itemKey=>$item) {
+                if (! request('entries.'.$entryKey.'items'.$itemKey.'.remove')) {
+                    $items[] = EntryItem::create([
+                        'user_id' => Auth::id(),
+                        'log_entry_id' => $createdEntry->id,
+                        'title_item' =>
+                            request('entries.'.$entryKey.'items'.$itemKey.'.title_item'),
+                        'code_project' =>
+                            request('entries.'.$entryKey.'items'.$itemKey.'.code_project')
+                    ]);
+                }
+            }
 
             $entries[] = $createdEntry;
         }

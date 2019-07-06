@@ -35,18 +35,18 @@
                                     Title <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" name="title_log" class="form-control form-control-lg"
-                                       placeholder="Title" required>
+                                       placeholder="Title" value="{{ old('title') }}" required>
                             </div>
 
                             <!-- Work Log Company & Year -->
-                            <div class="form-row mb-3">
+                            <div class="form-row">
                                 <div class="col-8">
                                     <div class="form-group">
                                         <label for="code_company">Company <span class="text-danger">*</span></label>
                                         <select name="code_company" class="form-control" required>
                                             <option value="">- Select Company -</option>
                                             @foreach ($companies as $company)
-                                                <option value="{{ $company->code_company }}">{{ $company->title_company }} ({{ $company->code_company }})</option>
+                                                <option value="{{ $company->code_company }}" {{ (old("code_company") == $company->code_company ? "selected":"") }}>{{ $company->title_company }} ({{ $company->code_company }})</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -57,15 +57,24 @@
                                         <select name="year_id" class="form-control" required>
                                             <option value="">- Select Year -</option>
                                             @foreach ($years as $year)
-                                                <option value="{{ $year->id }}">{{ $year->title_year }}</option>
+                                                <option value="{{ $year->id }}" {{ (old("year_id") == $year->id ? "selected":"") }}>{{ $year->title_year }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Work Log Remarks -->
+                            <div class="form-group mb-5">
+                                <label for="title">
+                                    Remarks
+                                </label>
+                                <textarea name="remarks" class="form-control" rows="3">{{ old('remarks') }}</textarea>
+                            </div>
                         </div>
                     </div>
 
+                    <h4>Entries</h4>
                     <!-- Entry List Group -->
                     <ul class="list-group mb-3">
                         @for ($i = 0; $i < 5; ++$i)
@@ -73,7 +82,7 @@
                             <li class="list-group-item">
                                 <div class="d-flex align-items-center mb-1">
                                     <div class="text-xs font-weight-bold text-secondary text-uppercase">
-                                        ENTRY #1
+                                        ENTRY #{{ $i + 1 }}
                                     </div>
                                 </div>
 
