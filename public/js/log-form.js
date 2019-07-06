@@ -1,48 +1,47 @@
 $(document).ready(function () {
     console.log('log-form loaded')
 
-    $('#entry0-add').click(function () {
-        const itemCount = $('#entry0-count').val()
-        console.log('itemCount', itemCount)
+    for (let i = 0; i < 5; ++i) {
+        const $tbody = $('#entry' + i + '-tbody')
+        const $count = $('#entry' + i + '-count')
+        const $addBtn = $('#entry' + i + '-add')
 
-        for (let i = 0; i < itemCount; ++i) {
-            const removeBtn = '#entry0-item' + i + '-remove'
-            const item = '#entry0-item' + i + '-row'
-            $(removeBtn).click(function () {
-                console.log(removeBtn + ' clicked')
-                console.log('item to remove:', item)
-                $(item).remove()
-            })
-        }
+        let itemCount = Number($count.val())
+        console.log('itemCount on load', itemCount, i)
 
-        $('#entry0-tbody').append(
-            '<tr id="entry0-item' + itemCount + '-row">\n' +
-            '  <td>\n' +
-            '      <select name="entry[0][' + itemCount + '][project_code]"\n' +
-            '              class="form-control form-control-sm" required>\n' +
-            '          <option value="">- Select Project Code</option>\n' +
-            '          <option value="KLICK">Klick</option>\n' +
-            '          <option value="LEARN">Learning (tutorials, playground, etc)</option>\n' +
-            '          <option value="PROJ">Personal Projects</option>\n' +
-            '          <option value="POC">Prototype or Proof-of-concept</option>\n' +
-            '          <option value="SSO">Singapore Symphony Orchestra</option>\n' +
-            '      </select>\n' +
-            '  </td>\n' +
-            '  <td>\n' +
-            '      <input type="text" name="entry[0][' + itemCount + '][title_item]"\n' +
-            '              class="form-control form-control-sm" required>\n' +
-            '\n' +
-            '  </td>\n' +
-            '  <td>\n' +
-            '      <button id="entry0-item' + itemCount + '-remove" type="button"\n' +
-            '              class="btn btn-sm btn-link text-danger">\n' +
-            '          <i class="fas fa-fw fa-trash-alt"></i>\n' +
-            '      </button>\n' +
-            '  </td>\n' +
-            '</tr>'
-        );
-    })
+        $addBtn.click(function () {
+            itemCount = Number($count.val())
+            console.log('itemCount when $addBtn is clicked: ', itemCount, i)
 
-    itemCount += 1;
-    $('#entry0-count').val(itemCount)
+            $tbody.append(
+                '<tr id="entry' + i + '-item' + itemCount + '-row">\n' +
+                '  <td>\n' +
+                '      <select name="entry[' + i + '][' + itemCount + '][project_code]"\n' +
+                '              class="form-control form-control-sm" required>\n' +
+                '          <option value="">- Select Project Code</option>\n' +
+                '          <option value="KLICK">Klick</option>\n' +
+                '          <option value="LEARN">Learning (tutorials, playground, etc)</option>\n' +
+                '          <option value="PROJ">Personal Projects</option>\n' +
+                '          <option value="POC">Prototype or Proof-of-concept</option>\n' +
+                '          <option value="SSO">Singapore Symphony Orchestra</option>\n' +
+                '      </select>\n' +
+                '  </td>\n' +
+                '  <td>\n' +
+                '      <input type="text" name="entry[' + i + '][' + itemCount + '][title_item]"\n' +
+                '              class="form-control form-control-sm" required>\n' +
+                '  </td>\n' +
+                '  <td>\n' +
+                '       <div class="form-check">\n' +
+                '           <input class="form-check-input position-static" type="checkbox"\n' +
+                '               name="entry[' + i + '][' + itemCount + '][remove]" value="remove">\n' +
+                '       </div>' +
+                '  </td>\n' +
+                '</tr>'
+            )
+
+            itemCount += 1
+            console.log('itemCount added: ', itemCount, i)
+            $count.val(itemCount)
+        })
+    }
 })

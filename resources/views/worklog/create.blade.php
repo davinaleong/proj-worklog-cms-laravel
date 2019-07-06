@@ -79,17 +79,9 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <th>
-                                                <label>
-                                                    Project Code <span class="text-danger">*</span>
-                                                </label>
-                                            </th>
-                                            <th>
-                                                <label>
-                                                    Task Item <span class="text-danger">*</span>
-                                                </label>
-                                            </th>
-                                            <th>&nbsp;</th>
+                                            <th><label>Project Code</label></th>
+                                            <th><label>Task Item</label></th>
+                                            <th><label>Remove</label></th>
                                         </tr>
                                         </thead>
                                         <tbody id="entry{{ $i }}-tbody">
@@ -110,10 +102,10 @@
 
                                             </td>
                                             <td>
-                                                <button id="entry{{ $i }}-item0-remove" type="button"
-                                                        class="btn btn-sm btn-link text-danger">
-                                                    <i class="fas fa-fw fa-trash-alt"></i>
-                                                </button>
+                                                <div class="form-check">
+                                                    <input class="form-check-input position-static" type="checkbox"
+                                                           name="entry[{{ $i }}][0][remove]" value="remove">
+                                                </div>
                                             </td>
                                         </tr>
                                         </tbody>
