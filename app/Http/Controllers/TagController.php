@@ -52,12 +52,6 @@ class TagController extends Controller
                 Rule::in(['Company', 'Project', 'Year', 'DayType'])
             ],
             'count' => 'required|integer|gte:0',
-//            '*.*.title' => 'string',
-//            '*.*.code' => 'string',
-//            '*.*.period_started_on' => 'string|regex:/^[0-3]\d-\d{2}-[0-2]\d{3}$/',
-//            '*.*.period_ended_on' => 'string|regex:/^[0-3]\d-\d{2}-[0-2]\d{3}$/',
-//            '*.*.icon_fa' => 'string|regex:/^fas fa-fw fa-[a-zA-Z]+$/',
-//            '*.*.color_hex' => 'string|regex:/^#[0-9a-fA-F]{6}$/',
             '*.*.remove' => [
                 Rule::in(['', 'remove'])
             ],

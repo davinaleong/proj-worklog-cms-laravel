@@ -10,6 +10,37 @@ class CodeModel extends Model
      * @param null $separator
      * @return array|string
      */
+    public function years($separator = null)
+    {
+        $years = Year::all()->sortBy('title_year');
+        $ids = [];
+        foreach ($years as $year)
+        {
+            $ids[] = $year->id;
+        }
+
+        return $separator ? implode($separator, $ids) : $ids;
+    }
+
+    /**
+     * @param null $separator
+     * @return array|string
+     */
+    public function companies($separator = null)
+    {
+        $companies = Company::all()->sortBy('title_company');
+        $codes = [];
+        foreach ($companies as $company) {
+            $codes[] = $company->code_company;
+        }
+
+        return $separator ? implode($separator, $codes) : $codes;
+    }
+
+    /**
+     * @param null $separator
+     * @return array|string
+     */
     public function dayTypes($separator = null)
     {
         $dayTypes = DayType::all()->sortBy('title_type');

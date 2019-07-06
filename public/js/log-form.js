@@ -16,24 +16,25 @@ $(document).ready(function () {
             $tbody.append(
                 '<tr id="entry' + i + '-item' + itemCount + '-row">\n' +
                 '  <td>\n' +
-                '      <select name="entry[' + i + '][' + itemCount + '][project_code]"\n' +
+                '      <select name="entries[' + i + '][items][' + itemCount + '][code_project]"\n' +
                 '              class="form-control form-control-sm" required>\n' +
-                '          <option value="">- Select Project Code</option>\n' +
-                '          <option value="KLICK">Klick</option>\n' +
-                '          <option value="LEARN">Learning (tutorials, playground, etc)</option>\n' +
-                '          <option value="PROJ">Personal Projects</option>\n' +
-                '          <option value="POC">Prototype or Proof-of-concept</option>\n' +
-                '          <option value="SSO">Singapore Symphony Orchestra</option>\n' +
+                '           <option value="">- Select Project Code</option>\n' +
+                '           <option value="KLICK">Klick (KLICK)</option>\n' +
+                '           <option value="LEARN">Learning (tutorials, playground, etc) (LEARN)</option>\n' +
+                '           <option value="OTHER">Others (OTHER)</option>\n' +
+                '           <option value="PROJ">Personal Projects (PROJ)</option>\n' +
+                '           <option value="POC">Prototype or Proof-of-concept (POC)</option>\n' +
+                '           <option value="SSO">Singapore Symphony Orchestra (SSO)</option>' +
                 '      </select>\n' +
                 '  </td>\n' +
                 '  <td>\n' +
-                '      <input type="text" name="entry[' + i + '][' + itemCount + '][title_item]"\n' +
+                '      <input type="text" name="entries[' + i + '][items][' + itemCount + '][title_item]"\n' +
                 '              class="form-control form-control-sm" required>\n' +
                 '  </td>\n' +
                 '  <td>\n' +
                 '       <div class="form-check">\n' +
                 '           <input class="form-check-input position-static" type="checkbox"\n' +
-                '               name="entry[' + i + '][' + itemCount + '][remove]" value="remove">\n' +
+                '               name="entries[' + i + '][items][' + itemCount + '][remove]" value="remove">\n' +
                 '       </div>' +
                 '  </td>\n' +
                 '</tr>'

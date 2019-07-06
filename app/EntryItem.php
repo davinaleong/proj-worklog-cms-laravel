@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class EntryItem extends BaseModel
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id', 'log_entry_id', 'title_item', 'code_project'
+    ];
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function user()

@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\DB;
 class Log extends BaseModel
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id', 'title_log', 'code_company', 'year_id'
+    ];
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function user()

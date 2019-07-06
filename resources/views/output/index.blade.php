@@ -30,6 +30,10 @@
     </table>
 
     <h2>Model Codes</h2>
+    <pre>@php var_dump($codeModel->years()) @endphp</pre>
+    <pre>{{ $codeModel->years(',') }}</pre>
+    <pre>@php var_dump($codeModel->companies()) @endphp</pre>
+    <pre>{{ $codeModel->companies(',') }}</pre>
     <pre>@php var_dump($codeModel->dayTypes()) @endphp</pre>
     <pre>{{ $codeModel->dayTypes(',') }}</pre>
     <pre>@php var_dump($codeModel->projects()) @endphp</pre>

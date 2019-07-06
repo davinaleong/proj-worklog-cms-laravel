@@ -6,9 +6,8 @@
 
         <!-- Work Log Card -->
         <div class="col-12">
-
             <div class="card border-left-primary shadow mb-4 worklog-card">
-                <form class="card-body" method="POST" action="">
+                <form class="card-body" method="POST" action="{{ route('worklog.store') }}">
                     @csrf
 
                     <!-- Day-Task Header -->
@@ -20,6 +19,9 @@
                                 <i class="fas fa-exclamation-triangle"></i> You are creating a <strong>New</strong> work-log entry.
                             </div>
 
+                            @include('partials.message-alert')
+                            @include('partials.error-alert')
+
                             <!-- Work Log Tags -->
                             <div class="d-flex align-items-center mb-1">
                                 <div class="text-xs font-weight-bold text-success text-uppercase">
@@ -28,20 +30,44 @@
                             </div>
 
                             <!-- Work Log Title -->
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="title">
-                                        Title <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="text" name="title" class="form-control form-control-lg"
-                                           placeholder="Title" required>
+                            <div class="form-group">
+                                <label for="title">
+                                    Title <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" name="title_log" class="form-control form-control-lg"
+                                       placeholder="Title" required>
+                            </div>
+
+                            <!-- Work Log Company & Year -->
+                            <div class="form-row mb-3">
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="code_company">Company <span class="text-danger">*</span></label>
+                                        <select name="code_company" class="form-control" required>
+                                            <option value="">- Select Company -</option>
+                                            @foreach ($companies as $company)
+                                                <option value="{{ $company->code_company }}">{{ $company->title_company }} ({{ $company->code_company }})</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="year_id">Year <span class="text-danger">*</span></label>
+                                        <select name="year_id" class="form-control" required>
+                                            <option value="">- Select Year -</option>
+                                            @foreach ($years as $year)
+                                                <option value="{{ $year->id }}">{{ $year->title_year }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Entry List Group -->
-                    <ul class="list-group">
+                    <ul class="list-group mb-3">
                         @for ($i = 0; $i < 5; ++$i)
                             <!-- Entry  -->
                             <li class="list-group-item">
@@ -54,15 +80,15 @@
                                 <div class="form-row">
                                     <div class="col-8">
                                         <div class="form-group">
-                                            <label for="entry[{{ $i }}][title]">Day Title <span class="text-danger">*</span></label>
-                                            <input type="text" name="entry[{{ $i }}][title]" class="form-control"
+                                            <label for="entries[{{ $i }}][title_entry]">Day Title <span class="text-danger">*</span></label>
+                                            <input type="text" name="entries[{{ $i }}][title_entry]" class="form-control"
                                                    placeholder="Entry Title" required>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="form-group">
-                                            <label for="entry[{{ $i }}][type]">Day-Type <span class="text-danger">*</span></label>
-                                            <select name="entry[{{ $i }}][type]" class="form-control" required>
+                                            <label for="entries[{{ $i }}][code_type]">Day-Type <span class="text-danger">*</span></label>
+                                            <select name="entries[{{ $i }}][code_type]" class="form-control" required>
                                                 <option value="">- Select Day-type -</option>
                                                 @foreach ($dayTypes as $dayType)
                                                 <option value="{{ $dayType->code_type }}">{{ $dayType->title_type }}</option>
@@ -72,7 +98,7 @@
                                     </div>
                                 </div>
 
-                                <input id="entry{{ $i }}-count" name="entry[{{ $i }}][count]" type="hidden" value="1">
+                                <input id="entry{{ $i }}-count" name="entries[{{ $i }}][count_item]" type="hidden" value="1">
 
                                 <!-- Entry Items (Tasks) Table -->
                                 <div class="table-responsive">
@@ -88,23 +114,23 @@
                                         <!-- Item #0 (count: 1) -->
                                         <tr id="entry{{$i}}-item0-row">
                                             <td>
-                                                <select name="entry[{{ $i }}][0][project_code]"
+                                                <select name="entries[{{ $i }}][items][0][code_project]"
                                                         class="form-control form-control-sm" required>
                                                     <option value="">- Select Project Code</option>
                                                     @foreach ($projects as $project)
-                                                    <option value="{{ $project->code_project }}">{{ $project->title_project }}</option>
+                                                    <option value="{{ $project->code_project }}">{{ $project->title_project }} ({{ $project->code_project }})</option>
                                                     @endforeach
                                                 </select>
                                             </td>
                                             <td>
-                                                <input type="text" name="entry[{{ $i }}][0][title_item]"
+                                                <input type="text" name="entries[{{ $i }}][items][0][title_item]"
                                                        class="form-control form-control-sm" required>
 
                                             </td>
                                             <td>
                                                 <div class="form-check">
                                                     <input class="form-check-input position-static" type="checkbox"
-                                                           name="entry[{{ $i }}][0][remove]" value="remove">
+                                                           name="entries[{{ $i }}][items][0][remove]" value="remove">
                                                 </div>
                                             </td>
                                         </tr>
@@ -125,9 +151,23 @@
                         @endfor
                     </ul>
 
+                    <!-- Published Checkbox -->
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label for="published">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="published" name="published">
+                                    <label class="form-check-label" for="published">
+                                        Publish this log
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
                     <!-- Form Actions -->
                     <div class="mt-3 text-right">
-                        <button type="button" class="btn btn-sm btn-primary shadow-sm">
+                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-check fa-sm"></i> Submit
                         </button>
                         <button type="reset" class="btn btn-sm btn-link text-secondary">

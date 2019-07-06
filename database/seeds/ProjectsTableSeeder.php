@@ -14,6 +14,11 @@ class ProjectsTableSeeder extends Seeder
         $now = now('Asia/Singapore')->format('Y-m-d H:i:s');
         DB::table('projects')->insert([
             [
+                'title_project' => 'Others',
+                'code_project' => 'OTHER',
+                'created_at' => $now,
+                'updated_at' => $now
+            ], [
                 'title_project' => 'Klick',
                 'code_project' => 'KLICK',
                 'created_at' => $now,
