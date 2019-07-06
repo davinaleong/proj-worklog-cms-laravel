@@ -132,8 +132,8 @@ class WorkLogController extends Controller
         if (count($createdEntries) >= 5) {
             // TODO: Redirect to show log page
             $message .=
-                ' Entries inserted: '.count($createdEntries).'.' .
-                ' Items inserted: '.count($createdItems).'.';
+                ' '.count($createdEntries).' entries created.' .
+                ' '.count($createdItems).' items created.';
             return redirect()
                 ->action('WorkLogController@show', ['id' => $log->id])
                 ->with(['message' => $message]);
