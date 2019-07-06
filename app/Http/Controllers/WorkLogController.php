@@ -116,14 +116,14 @@ class WorkLogController extends Controller
             ]);
 
             foreach ($entry['items'] as $itemKey=>$item) {
-                //if ($item['remove'] == 'remove') {
+                if (! array_key_exists('remove', $item)) {
                     $createdItems[] = EntryItem::create([
                         'user_id' => Auth::id(),
                         'log_entry_id' => $createdEntry->id,
                         'title_item' => $item['title_item'],
                         'code_project' => $item['code_project']
                     ]);
-                //}
+                }
             }
 
             $createdEntries[] = $createdEntry;
@@ -132,8 +132,8 @@ class WorkLogController extends Controller
         if (count($createdEntries) >= 5) {
             // TODO: Redirect to show log page
             $message .=
-                '<br>Entries inserted: '.count($createdEntries).
-                '<br>Items inserted: '.count($createdItems);
+                ' Entries inserted: '.count($createdEntries).'.' .
+                ' Items inserted: '.count($createdItems).'.';
             return redirect()
                 ->action('WorkLogController@show', ['id' => $log->id])
                 ->with(['message' => $message]);
