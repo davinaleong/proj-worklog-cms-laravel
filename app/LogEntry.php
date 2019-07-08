@@ -47,7 +47,7 @@ class LogEntry extends BaseModel
      */
     public function items()
     {
-        return $this->hasMany('App\EntryItem')->orderBy('created_at');
+        return $this->hasMany('App\EntryItem')->orderBy('id');
     }
 
     /**

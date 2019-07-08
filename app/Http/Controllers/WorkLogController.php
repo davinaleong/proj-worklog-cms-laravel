@@ -87,12 +87,6 @@ class WorkLogController extends Controller
             ]
         ]);
 
-//        var_dump(request('entries.0.title_entry'));
-//        echo '<hr>';
-//        var_dump(request('entries.0.items'));
-//        echo '<hr>';
-//        var_dump(request('entries.0.items.0.title_item'));
-
         $log = Log::create([
             'user_id' => Auth::id(),
             'title_log' => request('title_log'),
@@ -160,6 +154,12 @@ class WorkLogController extends Controller
      */
     public function edit($id)
     {
-        return view('worklog.edit');
+        return view('worklog.edit', [
+            'log' => Log::find($id),
+            'years' => Year::all()->sortBy('title_year'),
+            'companies' => Company::all()->sortBy('title_company'),
+            'dayTypes' => DayType::all()->sortBy('title_type'),
+            'projects' => Project::all()->sortBy('title_project')
+        ]);
     }
 }
