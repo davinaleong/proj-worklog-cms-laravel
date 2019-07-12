@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log('log-form loaded')
+    console.log('create-log-form loaded')
 
     for (let i = 0; i < 5; ++i) {
         const $tbody = $('#entry' + i + '-tbody')

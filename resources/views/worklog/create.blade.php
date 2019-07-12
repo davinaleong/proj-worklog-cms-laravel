@@ -192,5 +192,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/log-form.js') }}"></script>
+    <script src="{{ asset('js/create-log-form.js') }}"></script>
 @endsection
