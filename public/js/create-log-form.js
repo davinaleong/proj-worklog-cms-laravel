@@ -7,7 +7,7 @@ $(document).ready(function () {
         const $addBtn = $('#entry' + i + '-add')
 
         let itemCount = Number($count.val())
-        console.log('itemCount on load', itemCount, i)
+        console.log('itemCount on load: ', itemCount, i)
 
         $addBtn.click(function () {
             itemCount = Number($count.val())

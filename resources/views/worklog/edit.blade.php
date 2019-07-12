@@ -127,6 +127,9 @@
                                 </div>
                             </div>
 
+                            <input id="entry{{ $key }}-count" name="entries[{{ $key }}][count_item]"
+                                   type="hidden" value="{{ count($entry->items) }}">
+
                             <!-- Entry Line Items (Tasks) Table -->
                             <div class="table-responsive">
                                 <table class="table">
@@ -193,7 +196,7 @@
                                     <tr>
                                         <td colspan="3">&nbsp;</td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-link text-primary">
+                                            <button id="entry{{ $key }}-add" type="button" class="btn btn-sm btn-link text-primary">
                                                 <i class="fas fa-fw fa-plus"></i></button>
                                         </td>
                                     </tr>
