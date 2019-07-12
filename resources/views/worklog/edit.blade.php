@@ -191,7 +191,7 @@
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <td colspan="2">&nbsp;</td>
+                                        <td colspan="3">&nbsp;</td>
                                         <td>
                                             <button type="button" class="btn btn-sm btn-link text-primary">
                                                 <i class="fas fa-fw fa-plus"></i></button>
@@ -219,4 +219,8 @@
         </div>
 
     </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/edit-log-form.js') }}"></script>
 @endsection
