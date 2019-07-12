@@ -8,7 +8,9 @@
         <div class="col-12">
 
             <div class="card border-left-primary shadow mb-4 worklog-card">
-                <form class="card-body" method="POST" action="">
+                <form class="card-body" method="POST" action="{{ route('worklog.update', ['id' => $log->id]) }}">
+                    @csrf
+                    @method('PUT')
 
                     <!-- Day-Task Header -->
                     <div class="row no-gutters align-items-center">
@@ -24,7 +26,7 @@
 
                             <!-- Work Log Tags -->
                             <div class="d-flex align-items-center mb-1">
-                                <div class="text-xs font-weight-bold text-seconary text-uppercase mr-1">
+                                <div class="text-xs font-weight-bold text-secondary text-uppercase mr-1">
                                     <i class="fas fa-fw fa-pen"></i> EDITING
                                 </div>
 
@@ -79,11 +81,19 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Work Log Remarks -->
+                            <div class="form-group mb-5">
+                                <label for="title">
+                                    Remarks
+                                </label>
+                                <textarea name="remarks" class="form-control" rows="3">{{ old('remarks') ? old('remarks') : $log->remarks }}</textarea>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Entry List Group -->
-                    <ul class="list-group">
+                    <ul class="list-group mb-3">
                         @foreach ($log->entries as $key=>$entry)
                         <!-- Log Entry -->
                         <li class="list-group-item">
@@ -207,9 +217,23 @@
                         @endforeach
                     </ul>
 
+                    <!-- Published Checkbox -->
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label for="published">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="published" name="published">
+                                    <label class="form-check-label" for="published">
+                                        Publish this log
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
                     <!-- Form Actions -->
                     <div class="mt-3 text-right">
-                        <button type="button" class="btn btn-sm btn-primary shadow-sm">
+                        <button type="submit" class="btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-check fa-sm"></i> Submit
                         </button>
                         <button type="reset" class="btn btn-sm btn-link text-secondary">

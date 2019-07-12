@@ -124,7 +124,6 @@ class WorkLogController extends Controller
         }
 
         if (count($createdEntries) >= 5) {
-            // TODO: Redirect to show log page
             $message .=
                 ' '.count($createdEntries).' entries created.' .
                 ' '.count($createdItems).' items created.';
@@ -133,7 +132,6 @@ class WorkLogController extends Controller
                 ->with(['message' => $message]);
         }
 
-        // TODO: Redirect back with errors
         return back()->withInput()->withErrors('Failed to create Work Log');
     }
 
@@ -161,5 +159,74 @@ class WorkLogController extends Controller
             'dayTypes' => DayType::all()->sortBy('title_type'),
             'projects' => Project::all()->sortBy('title_project')
         ]);
+    }
+
+    public function update($id)
+    {
+        $codeModel = new CodeModel;
+
+        // TODO: Validate
+        request()->validate([
+            'title_log' => [
+                'required',
+                'string'
+            ],
+            'code_company' => [
+                'required',
+                'string',
+                Rule::in($codeModel->companies())
+            ],
+            'year_id' => [
+                'required',
+                'numeric',
+                Rule::in($codeModel->years())
+            ],
+            'published' => [
+                'string',
+                Rule::in(['', 'published'])
+            ],
+            'entries.*.title_entry' => [
+                'required',
+                'string'
+            ],
+            'entries.*.code_type' => [
+                'required',
+                'string',
+                Rule::in($codeModel->dayTypes())
+            ],
+            'entries.*.count_item' => [
+                'required',
+                'numeric'
+            ],
+            'entries.*.items.*.id' => [
+                'required'
+            ],
+            'entries.*.items.*.title_item' => [
+                'string'
+            ],
+            'entries.*.items.*.code_project' => [
+                'string',
+                Rule::in($codeModel->projects())
+            ],
+            'entries.*.items.*.remove' => [
+                Rule::in(['', 'remove'])
+            ]
+        ]);
+
+        // TODO: Process request data
+        // Save log
+        $log = Log::find($id);
+        $log->title_log = request('title_log');
+        $log->code_company = request('code_company');
+        $log->year_id = request('year_id');
+        $log->published = request()->has('published') ? 1 : 0;
+        $log->save();
+
+        // Save entries
+        // Check for 'new' id in entry items
+        // Save items
+        // Create for 'new' id items
+
+        // TODO: Redirects
     }
 }
