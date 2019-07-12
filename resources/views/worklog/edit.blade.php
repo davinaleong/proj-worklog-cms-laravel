@@ -132,6 +132,7 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
+                                        <th><label>#</label></th>
                                         <th>
                                             <label>
                                                 Project Code <span class="text-danger">*</span>
@@ -145,10 +146,14 @@
                                         <th>Remove</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="entry{{$key}}-tbody">
                                     @foreach ($entry->items as $itemKey=>$item)
                                     <!-- Entry Item -->
                                     <tr>
+                                        <td>
+                                            {{ $itemKey + 1 }}
+                                            <input type="hidden" name="entries[{{ $key }}][items][{{ $itemKey }}][id]" value="{{ $item->id }}">
+                                        </td>
                                         <td>
                                             <select name="entries[{{ $key }}][items][{{ $itemKey }}][code_project]"
                                                     class="form-control form-control-sm" required>
@@ -174,7 +179,6 @@
                                             <input type="text" name="entries[{{ $key }}][items][{{ $itemKey }}][title_item]"
                                                    class="form-control form-control-sm"
                                                    value="{{ $title_item }}" required>
-                                            <input type="hidden" name="entries[{{ $key }}][items][{{ $itemKey }}][id]" value="{{ $item->id }}">
                                         </td>
                                         <td>
                                             <div class="form-check">

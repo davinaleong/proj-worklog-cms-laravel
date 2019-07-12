@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17e8c906-7fd7-4cb5-acec-9b53eb3874a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/LogEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/LogEntry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/worklog/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/worklog/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,12 +43,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="403">
+                <state relative-caret-position="3087">
                   <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
                   <folding>
                     <element signature="e#40#58#0#PHP" expanded="true" />
-                    <element signature="e#993#4346#0#PHP" />
-                    <element signature="e#1090#2337#1#PHP" />
                   </folding>
                 </state>
               </provider>
@@ -59,8 +55,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/worklog/edit.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="162" column="154" selection-start-line="162" selection-start-column="154" selection-end-line="162" selection-end-column="154" />
+                <state relative-caret-position="271">
+                  <caret line="153" column="59" selection-start-line="153" selection-start-column="59" selection-end-line="153" selection-end-column="59" />
                 </state>
               </provider>
             </entry>
@@ -68,12 +64,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+                <state relative-caret-position="2205">
+                  <caret line="112" selection-start-line="112" selection-end-line="112" />
                   <folding>
                     <element signature="e#40#56#0#PHP" expanded="true" />
                   </folding>
@@ -85,7 +81,7 @@
             <entry file="file://$PROJECT_DIR$/resources/views/worklog/create.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="272">
-                  <caret line="143" column="49" lean-forward="true" selection-start-line="138" selection-start-column="44" selection-end-line="143" selection-end-column="49" />
+                  <caret line="143" column="49" selection-start-line="138" selection-start-column="44" selection-end-line="143" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -394,12 +390,13 @@
       <workItem from="1561350335415" duration="1520000" />
       <workItem from="1562115728996" duration="10898000" />
       <workItem from="1562246337567" duration="4993000" />
-      <workItem from="1562290072810" duration="30728000" />
+      <workItem from="1562290072810" duration="30810000" />
+      <workItem from="1562596730954" duration="221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167841000" />
+    <option name="totallyTimeSpent" value="168144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="39" width="1400" height="768" extended-state="0" />
@@ -749,28 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-            <element signature="e#993#4346#0#PHP" />
-            <element signature="e#1090#2337#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/EntryItem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-76">
@@ -795,17 +770,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WorkLogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3087">
+          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/worklog/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="143" column="49" lean-forward="true" selection-start-line="138" selection-start-column="44" selection-end-line="143" selection-end-column="49" />
+          <caret line="143" column="49" selection-start-line="138" selection-start-column="44" selection-end-line="143" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/worklog/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="162" column="154" selection-start-line="162" selection-start-column="154" selection-end-line="162" selection-end-column="154" />
+        <state relative-caret-position="271">
+          <caret line="153" column="59" selection-start-line="153" selection-start-column="59" selection-end-line="153" selection-end-column="59" />
         </state>
       </provider>
     </entry>
