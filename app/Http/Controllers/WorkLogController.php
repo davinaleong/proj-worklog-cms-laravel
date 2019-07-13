@@ -96,11 +96,10 @@ class WorkLogController extends Controller
         ]);
 
         $message = 'New Log created.';
-        $entries = request('entries');
         $createdEntries = [];
         $createdItems = [];
 
-        foreach ($entries as $entryKey=>$entry) {
+        foreach (request('entries') as $entryKey=>$entry) {
             $createdEntry = LogEntry::create([
                 'user_id' => Auth::id(),
                 'log_id' => $log->id,
@@ -232,12 +231,11 @@ class WorkLogController extends Controller
         // Save items
         // Create for 'new' id items
         $message = 'Log updated.';
-        $entries = request('entries');
         $updatedEntries = [];
         $updatedItems = [];
         $createdItems = [];
 
-        foreach ($entries as $entryKey=>$entry) {
+        foreach (request('entries') as $entryKey=>$entry) {
             $entryToUpdate = LogEntry::find($entry['id']);
             $entryToUpdate->title_entry = $entry['title_entry'];
             $entryToUpdate->code_type = $entry['code_type'];
@@ -245,6 +243,27 @@ class WorkLogController extends Controller
             $entryToUpdate->save();
 
             // TODO: Process items
+            foreach ($entry['items'] as $itemKey=>$item) {
+                if (! array_key_exists('remove', $item)) {
+                    if ($item['id'] == 'new') {
+                        // TODO: Create item
+                        $createdItems[] = EntryItem::create([
+                            'user_id' => Auth::id(),
+                            'log_entry_id' => $entryToUpdate->id,
+                            'title_item' => $item['title_item'],
+                            'code_project' => $item['code_project']
+                        ]);
+                    } else {
+                        // TODO: Update item
+                        $itemToUpdate = EntryItem::find($item['id']);
+                        $itemToUpdate->title_item = $item['title_item'];
+                        $itemToUpdate->code_project = $item['code_project'];
+                        $itemToUpdate->save();
+
+                        $updatedItems[] = $itemToUpdate;
+                    }
+                }
+            }
 
             $updatedEntries[] = $entryToUpdate;
         }
