@@ -161,11 +161,14 @@ class WorkLogController extends Controller
         ]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update($id)
     {
         $codeModel = new CodeModel;
 
-        // TODO: Validate
         request()->validate([
             'title_log' => [
                 'required',
@@ -217,8 +220,6 @@ class WorkLogController extends Controller
             ]
         ]);
 
-        // TODO: Process request data
-        // Save log
         $log = Log::find($id);
         $log->title_log = request('title_log');
         $log->code_company = request('code_company');
@@ -226,35 +227,33 @@ class WorkLogController extends Controller
         $log->published = request()->has('published') ? 1 : 0;
         $log->save();
 
-        // Save entries
-        // Check for 'new' id in entry items
-        // Save items
-        // Create for 'new' id items
         $message = 'Log updated.';
         $updatedEntries = [];
         $updatedItems = [];
         $createdItems = [];
+        $removedItems = [];
 
         foreach (request('entries') as $entryKey=>$entry) {
             $entryToUpdate = LogEntry::find($entry['id']);
             $entryToUpdate->title_entry = $entry['title_entry'];
             $entryToUpdate->code_type = $entry['code_type'];
-            // TODO: Implement date field
             $entryToUpdate->save();
 
-            // TODO: Process items
             foreach ($entry['items'] as $itemKey=>$item) {
-                if (! array_key_exists('remove', $item)) {
-                    if ($item['id'] == 'new') {
-                        // TODO: Create item
+                if ($item['id'] == 'new') {
+                    if (! array_key_exists('remove', $item)) {
                         $createdItems[] = EntryItem::create([
                             'user_id' => Auth::id(),
                             'log_entry_id' => $entryToUpdate->id,
                             'title_item' => $item['title_item'],
                             'code_project' => $item['code_project']
                         ]);
+                    }
+                } else {
+                    if (array_key_exists('remove', $item)) {
+                        EntryItem::destroy($item['id']);
+                        $removedItems[] = $itemKey;
                     } else {
-                        // TODO: Update item
                         $itemToUpdate = EntryItem::find($item['id']);
                         $itemToUpdate->title_item = $item['title_item'];
                         $itemToUpdate->code_project = $item['code_project'];
@@ -268,11 +267,11 @@ class WorkLogController extends Controller
             $updatedEntries[] = $entryToUpdate;
         }
 
-        // TODO: Redirects
         if (count($updatedEntries) >= 5) {
             $message .=
                 ' '.count($updatedEntries).' entries updated.' .
                 ' '.count($updatedItems).' items updated.' .
+                ' '.count($removedItems).' items removed.' .
                 ' '.count($createdItems).' new items created.';
             return redirect()
                 ->action('WorkLogController@show', ['id' => $log->id])
