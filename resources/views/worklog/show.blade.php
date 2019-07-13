@@ -35,9 +35,13 @@
                         <!-- Header Actions -->
                         <div class="col-auto">
                             <a href="{{ route('worklog.edit', ['id' => $log->id]) }}" class="d-none d-sm-inline-block
-                    btn btn-sm btn-outline-primary shadow-sm">
+                    btn btn-sm btn-outline-primary mr-1">
                                 <i class="fas fa-pen fa-sm"></i> Edit
                             </a>
+                            <button class="btn btn-sm btn-outline-danger"
+                                data-toggle="modal" data-target="#deleteModal">
+                                <i class="fas fa-trash fa-sm"></i> Delete
+                            </button>
                         </div>
                     </div>
 
@@ -64,5 +68,30 @@
 
         </div>
 
+    </div>
+
+    <!-- Delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete this Work Log?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">This action cannot be undone.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">
+                        <i class="fas fa-fw fa-ban"></i> Cancel</button>
+                    <form id="form-delete" method="POST" action="{{ route('worklog.destroy', ['id' => $log->id]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-fw fa-trash"></i> Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

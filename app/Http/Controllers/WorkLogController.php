@@ -141,6 +141,11 @@ class WorkLogController extends Controller
      */
     public function show($id)
     {
+        $log = Log::find($id);
+        if (! $log) {
+            redirect()->action('WorkLogController@index')->with(['message' => 'Work Log not found.']);
+        }
+
         return view('worklog.show', [
             'log' => Log::find($id)
         ]);
@@ -152,6 +157,11 @@ class WorkLogController extends Controller
      */
     public function edit($id)
     {
+        $log = Log::find($id);
+        if (! $log) {
+            redirect()->action('WorkLogController@index')->with(['message' => 'Work Log not found.']);
+        }
+
         return view('worklog.edit', [
             'log' => Log::find($id),
             'years' => Year::all()->sortBy('title_year'),
@@ -279,5 +289,33 @@ class WorkLogController extends Controller
         }
 
         return back()->withInput()->withErrors('Failed to update Work Log.');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        // TODO: Cascade delete
+        $entries = LogEntry::where('log_id', '=', $id);
+        $deletedItemCount = 0;
+
+        foreach ($entries as $entry) {
+            $deletedItemCount += EntryItem::where('log_entry_id', '=', $entry->id)->delete();
+        }
+
+//        $deletedEntryCount = LogEntry::where('log_id', '=', $id)->delete();
+//
+//        if (Log::destroy($id)) {
+//            $message = 'Log deleted.'.
+//                ' '.$deletedEntryCount.' entries deleted.'.
+//                ' '.$deletedItemCount.' items deleted.';
+//            return redirect()
+//                ->action('WorkLogController@index')
+//                ->with(['message' => $message]);
+//        }
+//
+//        redirect()->back()->with(['message' => 'Failed to delete Work Log.']);
     }
 }

@@ -16,6 +16,8 @@
                              onclick="goto('{{ route('worklog.show', ['id' => $log->id]) }}')">
                             <div class="card-body">
 
+                                @include('partials.message-alert')
+
                                 <h4 class="m-0 font-weight-bold text-secondary pb-3">{{ $log->title_log }}</h4>
                                 <p>
                                     <span class="badge badge-primary">
