@@ -106,6 +106,7 @@ class WorkLogController extends Controller
                 'log_id' => $log->id,
                 'title_entry' => $entry['title_entry'],
                 'code_type' => $entry['code_type'],
+                // TODO: Implement date field
                 'date' => '2019-01-01'
             ]);
 
@@ -185,6 +186,10 @@ class WorkLogController extends Controller
                 'string',
                 Rule::in(['', 'published'])
             ],
+            'entries.*.id' => [
+                'required',
+                'numeric'
+            ],
             'entries.*.title_entry' => [
                 'required',
                 'string'
@@ -226,7 +231,35 @@ class WorkLogController extends Controller
         // Check for 'new' id in entry items
         // Save items
         // Create for 'new' id items
+        $message = 'Log updated.';
+        $entries = request('entries');
+        $updatedEntries = [];
+        $updatedItems = [];
+        $createdItems = [];
+
+        foreach ($entries as $entryKey=>$entry) {
+            $entryToUpdate = LogEntry::find($entry['id']);
+            $entryToUpdate->title_entry = $entry['title_entry'];
+            $entryToUpdate->code_type = $entry['code_type'];
+            // TODO: Implement date field
+            $entryToUpdate->save();
+
+            // TODO: Process items
+
+            $updatedEntries[] = $entryToUpdate;
+        }
 
         // TODO: Redirects
+        if (count($updatedEntries) >= 5) {
+            $message .=
+                ' '.count($updatedEntries).' entries updated.' .
+                ' '.count($updatedItems).' items updated.' .
+                ' '.count($createdItems).' new items created.';
+            return redirect()
+                ->action('WorkLogController@show', ['id' => $log->id])
+                ->with(['message' => $message]);
+        }
+
+        return back()->withInput()->withErrors('Failed to update Work Log.');
     }
 }
