@@ -298,24 +298,24 @@ class WorkLogController extends Controller
     public function destroy($id)
     {
         // TODO: Cascade delete
-        $entries = LogEntry::where('log_id', '=', $id);
+        $entries = LogEntry::where('log_id', '=', $id)->get();
         $deletedItemCount = 0;
 
         foreach ($entries as $entry) {
             $deletedItemCount += EntryItem::where('log_entry_id', '=', $entry->id)->delete();
         }
 
-//        $deletedEntryCount = LogEntry::where('log_id', '=', $id)->delete();
-//
-//        if (Log::destroy($id)) {
-//            $message = 'Log deleted.'.
-//                ' '.$deletedEntryCount.' entries deleted.'.
-//                ' '.$deletedItemCount.' items deleted.';
-//            return redirect()
-//                ->action('WorkLogController@index')
-//                ->with(['message' => $message]);
-//        }
-//
-//        redirect()->back()->with(['message' => 'Failed to delete Work Log.']);
+        $deletedEntryCount = LogEntry::where('log_id', '=', $id)->delete();
+
+        if (Log::destroy($id)) {
+            $message = 'Log deleted.'.
+                ' '.$deletedEntryCount.' entries deleted.'.
+                ' '.$deletedItemCount.' items deleted.';
+            return redirect()
+                ->action('WorkLogController@index')
+                ->with(['message' => $message]);
+        }
+
+        redirect()->back()->with(['message' => 'Failed to delete Work Log.']);
     }
 }
