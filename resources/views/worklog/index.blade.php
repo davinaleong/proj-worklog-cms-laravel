@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="row">
+        @include('partials.message-alert')
+
         @foreach ($years as $year)
             @if (count($year->logs) > 0)
             <!-- Row Header -->
@@ -16,8 +18,6 @@
                         <div class="card shadow mb-4 clickable clickable worklog-card"
                              onclick="goto('{{ route('worklog.show', ['id' => $log->id]) }}')">
                             <div class="card-body">
-
-                                @include('partials.message-alert')
 
                                 <h4 class="m-0 font-weight-bold text-secondary pb-3">{{ $log->title_log }}</h4>
                                 <p>
