@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Davina Leong',
             'email' => 'leong.shi.yun@gmail.com',
             'photo' => $faker->imageUrl($width = 640, $height = 480),
-            'password' => \Illuminate\Support\Facades\Hash::make('ent3r1n')
+            'password' => '$2y$12$vVd3Ab93ZNs6q0CcOObO8.PtmKki3Vi2IpQFFGJe5MPXxLG.2qnOW'
         ]);
     }
 }

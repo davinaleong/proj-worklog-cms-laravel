@@ -9,7 +9,6 @@ services:
     image: digitalocean.com/php
     env_file:
       - ./.env
-      - ./.env.testing
     container_name: worklog_laravel_app
     restart: unless-stopped
     tty: true

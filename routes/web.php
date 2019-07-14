@@ -29,8 +29,8 @@ Route::middleware('auth')->prefix('/jot')->group(function() {
     Route::get('/tag', 'TagController@index')->name('tag.index');
     Route::get('/tag/edit', 'TagController@edit')->name('tag.edit');
     Route::put('/tag/update', 'TagController@update')->name('tag.update');
-//    Route::put('/tag/update/years', 'TagController@update')->name('update.years');
-//    Route::put('/tag/update/companies', 'TagController@update')->name('update.companies');
-//    Route::put('/tag/update/projects', 'TagController@update')->name('update.projects');
-//    Route::put('/tag/update/daytypes', 'TagController@update')->name('update.daytypes');
+
+    Route::resource('worklog', 'WorkLogController');
+
+    Route::get('/output', 'OutputController@index');
 });

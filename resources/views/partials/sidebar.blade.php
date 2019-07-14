@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('worklog.index') }}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -30,8 +30,8 @@
         <div id="collapseWorkLog" class="collapse" aria-labelledby="headingWorkLog" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Log Actions</h6>
-                <a class="collapse-item" href="index.html"><i class="fas fa-fw fa-table"></i> View All</a>
-                <a class="collapse-item" href="new-log.html"><i class="fas fa-fw fa-plus"></i> Add One</a>
+                <a class="collapse-item" href="{{ route('worklog.index') }}"><i class="fas fa-fw fa-table"></i> View All</a>
+                <a class="collapse-item" href="{{ route('worklog.create') }}"><i class="fas fa-fw fa-plus"></i> Add One</a>
 
                 <h6 class="collapse-header">Settings</h6>
                 <a class="collapse-item" href="{{ route('tag.index') }}">
