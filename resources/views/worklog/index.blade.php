@@ -10,6 +10,7 @@
             </div>
 
                 @foreach($year->logs as $log)
+                    @if ($log->published == 1)
                     <!-- Work Log Card -->
                     <div class="col-xl-4 col-md-6 mb-3">
                         <div class="card shadow mb-4 clickable clickable worklog-card"
@@ -33,6 +34,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 @endforeach
             @endif
         @endforeach
