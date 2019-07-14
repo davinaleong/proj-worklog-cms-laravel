@@ -1,8 +1,39 @@
 <html>
 <head>
     <style>
+        body {
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        pre, code {
+            font-family: Monaco, monospace;
+        }
+
         table, th, td {
             border: thin solid #000
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        thead {
+            border-bottom: 2px solid #000;
+        }
+
+        tfoot {
+            border-top: 2px solid #000;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+
+        th {
+            background: #666;
+            color: #fff;
         }
     </style>
 </head>
@@ -40,5 +71,23 @@
     <pre>{{ $codeModel->projects(',') }}</pre>
     <pre>@php var_dump($codeModel->dbLogActions()) @endphp</pre>
     <pre>{{ $codeModel->dbLogActions(',') }}</pre>
+
+    <h2>Entry</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($items as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->title_item }}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
