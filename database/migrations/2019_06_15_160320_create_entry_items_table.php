@@ -19,6 +19,7 @@ class CreateEntryItemsTable extends Migration
             $table->integer('user_id', false, true);
             $table->string('title_item')->nullable();
             $table->string('code_project')->nullable();
+            $table->boolean('show_project')->nullable();
             $table->timestamps();
         });
     }

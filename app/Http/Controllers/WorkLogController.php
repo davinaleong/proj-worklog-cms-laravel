@@ -82,6 +82,9 @@ class WorkLogController extends Controller
                 'string',
                 Rule::in($codeModel->projects())
             ],
+            'entries.*.items.*.show_project' => [
+                Rule::in(['', 'show'])
+            ],
             'entries.*.items.*.remove' => [
                 Rule::in(['', 'remove'])
             ]
@@ -114,12 +117,17 @@ class WorkLogController extends Controller
 
             foreach ($entry['items'] as $itemKey=>$item) {
                 if (! array_key_exists('remove', $item)) {
-                    $createdItems[] = EntryItem::create([
+                    $createdItem = EntryItem::create([
                         'user_id' => Auth::id(),
                         'log_entry_id' => $createdEntry->id,
                         'title_item' => $item['title_item'],
-                        'code_project' => $item['code_project']
+                        'code_project' => $item['code_project'],
+                        'show_project' => 0
                     ]);
+                    $createdItem->show_project = $item['show_project'] == 'show' ? 1 : 0;
+                    $createdItem->save();
+
+                    $createdItems = $createdItem;
                 }
             }
 
@@ -255,12 +263,18 @@ class WorkLogController extends Controller
             foreach ($entry['items'] as $itemKey=>$item) {
                 if ($item['id'] == 'new') {
                     if (! array_key_exists('remove', $item)) {
-                        $createdItems[] = EntryItem::create([
+                        $createdItem = EntryItem::create([
                             'user_id' => Auth::id(),
                             'log_entry_id' => $entryToUpdate->id,
                             'title_item' => $item['title_item'],
-                            'code_project' => $item['code_project']
+                            'code_project' => $item['code_project'],
+                            'show_project' => 0
                         ]);
+                        $createdItem->show_project =
+                            (array_key_exists('show_project', $item) && $item['show_project'] == 'show') ? 1 : 0;
+                        $createdItem->save();
+
+                        $createdItems[] = $createdItem;
                     }
                 } else {
                     if (array_key_exists('remove', $item)) {
@@ -270,6 +284,8 @@ class WorkLogController extends Controller
                         $itemToUpdate = EntryItem::find($item['id']);
                         $itemToUpdate->title_item = $item['title_item'];
                         $itemToUpdate->code_project = $item['code_project'];
+                        $itemToUpdate->show_project =
+                            (array_key_exists('show_project', $item) && $item['show_project'] == 'show') ? 1 : 0;
                         $itemToUpdate->save();
 
                         $updatedItems[] = $itemToUpdate;

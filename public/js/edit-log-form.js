@@ -20,16 +20,24 @@ $(document).ready(function() {
                 '    <input type="hidden" name="entries[' + i + '][items][' + itemCount + '][id]" value="new">\n' +
                 '  </td>\n' +
                 '  <td>\n' +
-                '    <select name="entries[' + i + '][items][' + itemCount + '][code_project]"\n' +
-                '        class="form-control form-control-sm" required>\n' +
-                '      <option value="">- Select Project Code</option>\n' +
-                '      <option value="KLICK" >Klick</option>\n' +
-                '      <option value="LEARN" >Learning (tutorials, playground, etc)</option>\n' +
-                '      <option value="OTHER" >Others</option>\n' +
-                '      <option value="PROJ" >Personal Projects</option>\n' +
-                '      <option value="POC" >Prototype or Proof-of-concept</option>\n' +
-                '      <option value="SSO">Singapore Symphony Orchestra</option>\n' +
-                '    </select>\n' +
+                '    <div class="input-group">\n' +
+                '        <select name="entries[' + i + '][items][' + itemCount + '][code_project]"\n' +
+                '                class="form-control form-control-sm" required>\n' +
+                '            <option value="">- Select Project Code</option>\n' +
+                '            <option value="KLICK">Klick</option>\n' +
+                '            <option value="LEARN" >Learning (tutorials, playground, etc)</option>\n' +
+                '            <option value="OTHER" >Others</option>\n' +
+                '            <option value="PROJ" >Personal Projects</option>\n' +
+                '            <option value="POC" >Prototype or Proof-of-concept</option>\n' +
+                '            <option value="SSO" >Singapore Symphony Orchestra</option>\n' +
+                '        </select>\n' +
+                '        <div class="input-group-append">\n' +
+                '            <div class="input-group-text">\n' +
+                '                <input type="checkbox" name="entries[' + i + '][items][' + itemCount + '][show_project]"\n' +
+                '                    value="show">\n' +
+                '        </div>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
                 '  </td>\n' +
                 '  <td>\n' +
                 '    <input type="text" name="entries[' + i + '][items][' + itemCount + '][title_item]"\n' +

@@ -11,5 +11,6 @@ $factory->define(\App\EntryItem::class, function (Faker $faker) {
         'user_id' => 1,
         'title_item' => ucfirst($faker->words(5, true)),
         'code_project' => $faker->randomElement(['KLICK', 'SSO', 'PROJ', 'POC', 'LEARN']),
+        'show_project' => $faker->randomElement([true, false])
     ];
 });

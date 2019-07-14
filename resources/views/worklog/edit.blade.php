@@ -168,19 +168,33 @@
                                             <input type="hidden" name="entries[{{ $key }}][items][{{ $itemKey }}][id]" value="{{ $item->id }}">
                                         </td>
                                         <td>
-                                            <select name="entries[{{ $key }}][items][{{ $itemKey }}][code_project]"
-                                                    class="form-control form-control-sm" required>
-                                                <option value="">- Select Project Code</option>
-                                                @php
-                                                    $code_project = $item->code_project;
-                                                    if (old('entries['.$key.'][items]['.$itemKey.'][code_project]')) {
-                                                        $code_project = old('entries['.$key.'][items]['.$itemKey.'][code_project]');
-                                                    }
-                                                @endphp
-                                                @foreach ($projects as $project)
-                                                    <option value="{{ $project->code_project }}" {{ ($code_project == $project->code_project ? "selected" : "") }}>{{ $project->title_project }}</option>
-                                                @endforeach
-                                            </select>
+                                            <div class="input-group">
+                                                <select name="entries[{{ $key }}][items][{{ $itemKey }}][code_project]"
+                                                        class="form-control form-control-sm" required>
+                                                    <option value="">- Select Project Code</option>
+                                                    @php
+                                                        $code_project = $item->code_project;
+                                                        if (old('entries['.$key.'][items]['.$itemKey.'][code_project]')) {
+                                                            $code_project = old('entries['.$key.'][items]['.$itemKey.'][code_project]');
+                                                        }
+                                                    @endphp
+                                                    @foreach ($projects as $project)
+                                                        <option value="{{ $project->code_project }}" {{ ($code_project == $project->code_project ? "selected" : "") }}>{{ $project->title_project }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        @php
+                                                        $show_project = $item->show_project == 1 ? 'show' : '';
+                                                        if (old('entries['.$key.'][items]['.$itemKey.'][show_project]') == 'show') {
+                                                            $show_project = 'show';
+                                                        }
+                                                        @endphp
+                                                        <input type="checkbox" name="entries[{{ $key }}][items][{{ $itemKey }}][show_project]"
+                                                               value="show" {{ ($show_project == 'show' ? 'checked' : '') }}>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td>
                                             @php

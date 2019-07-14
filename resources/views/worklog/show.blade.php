@@ -55,7 +55,10 @@
 
                             <ol>
                                 @foreach ($entry->items as $item)
-                                <li><code class="wl-project-code">{{ $item->project['code_project'] }}</code>:&nbsp;
+                                <li>
+                                    @if ($item->show_project == 1)
+                                        <code class="wl-project-code">{{ $item->project['code_project'] }}</code>:&nbsp;
+                                    @endif
                                     {{ $item->title_item }}</li>
                                 @endforeach
                             </ol>
