@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Log;
-use App\LogEntry;
+use App\Logentries;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
@@ -77,22 +77,22 @@ class WorkLogTest extends TestCase
 
         $attributes = [
             'title' => 'Week1',
-            'entry[0][title]' => 'Jan 01',
-            'entry[0][type]' => 'W',
-            'entry[0][item][0][title]' => 'Item 1',
-            'entry[0][item][0][project_code]' => 'TEST',
-            'entry[0][item][1][title]' => 'Item 2',
-            'entry[0][item][1][project_code]' => 'TEST',
-            'entry[0][item][2][title]' => 'Item 3',
-            'entry[0][item][2][project_code]' => 'TEST',
-            'entry[1][title]' => 'Jan 02',
-            'entry[1][type]' => 'W',
-            'entry[1][item][0][title]' => 'Item 1',
-            'entry[1][item][0][project_code]' => 'TEST',
-            'entry[1][item][1][title]' => 'Item 2',
-            'entry[1][item][1][project_code]' => 'TEST',
-            'entry[1][item][2][title]' => 'Item 3',
-            'entry[1][item][2][project_code]' => 'TEST',
+            'entries[0][title]' => 'Jan 01',
+            'entries[0][type]' => 'W',
+            'entries[0][items][0][title]' => 'Item 1',
+            'entries[0][items][0][project_code]' => 'TEST',
+            'entries[0][items][1][title]' => 'Item 2',
+            'entries[0][items][1][project_code]' => 'TEST',
+            'entries[0][items][2][title]' => 'Item 3',
+            'entries[0][items][2][project_code]' => 'TEST',
+            'entries[1][title]' => 'Jan 02',
+            'entries[1][type]' => 'W',
+            'entries[1][items][0][title]' => 'Item 1',
+            'entries[1][items][0][project_code]' => 'TEST',
+            'entries[1][items][1][title]' => 'Item 2',
+            'entries[1][items][1][project_code]' => 'TEST',
+            'entries[1][items][2][title]' => 'Item 3',
+            'entries[1][items][2][project_code]' => 'TEST',
         ];
 
         $response = $this->post(route('logs.store', $attributes));
@@ -138,22 +138,22 @@ class WorkLogTest extends TestCase
         $attributes = [
             'id' => 1,
             'title' => 'Week1',
-            'entry[0][title]' => 'Jan 01',
-            'entry[0][type]' => 'W',
-            'entry[0][item][0][title]' => 'Item 1',
-            'entry[0][item][0][project_code]' => 'TEST',
-            'entry[0][item][1][title]' => 'Item 2',
-            'entry[0][item][1][project_code]' => 'TEST',
-            'entry[0][item][2][title]' => 'Item 3',
-            'entry[0][item][2][project_code]' => 'TEST',
-            'entry[1][title]' => 'Jan 02',
-            'entry[1][type]' => 'W',
-            'entry[1][item][0][title]' => 'Item 1',
-            'entry[1][item][0][project_code]' => 'TEST',
-            'entry[1][item][1][title]' => 'Item 2',
-            'entry[1][item][1][project_code]' => 'TEST',
-            'entry[1][item][2][title]' => 'Item 3',
-            'entry[1][item][2][project_code]' => 'TEST',
+            'entries[0][title]' => 'Jan 01',
+            'entries[0][type]' => 'W',
+            'entries[0][items][0][title]' => 'Item 1',
+            'entries[0][items][0][project_code]' => 'TEST',
+            'entries[0][items][1][title]' => 'Item 2',
+            'entries[0][items][1][project_code]' => 'TEST',
+            'entries[0][items][2][title]' => 'Item 3',
+            'entries[0][items][2][project_code]' => 'TEST',
+            'entries[1][title]' => 'Jan 02',
+            'entries[1][type]' => 'W',
+            'entries[1][items][0][title]' => 'Item 1',
+            'entries[1][items][0][project_code]' => 'TEST',
+            'entries[1][items][1][title]' => 'Item 2',
+            'entries[1][items][1][project_code]' => 'TEST',
+            'entries[1][items][2][title]' => 'Item 3',
+            'entries[1][items][2][project_code]' => 'TEST',
         ];
 
         $response = $this->put(route('log.update', $attributes));
@@ -180,8 +180,8 @@ class WorkLogTest extends TestCase
     private function createLog()
     {
         $log = factory(Log::class)->create();
-        $entries = factory(LogEntry::class)->create();
-        $items = factory(EntryItem::class)->create();
+        $entries = factory(Logentries::class)->create();
+        $items = factory(entriesItem::class)->create();
 
         return [
             'log' => $log,

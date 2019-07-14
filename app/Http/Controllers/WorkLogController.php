@@ -92,8 +92,10 @@ class WorkLogController extends Controller
             'title_log' => request('title_log'),
             'code_company' => request('code_company'),
             'year_id' => request('year_id'),
-            'published' => request()->has('published') ? 1 : 0
+            'published' => 0
         ]);
+        $log->published = request()->has('published') ? 1 : 0;
+        $log->save();
 
         $message = 'New Log created.';
         $createdEntries = [];
@@ -107,6 +109,7 @@ class WorkLogController extends Controller
                 'code_type' => $entry['code_type'],
                 // TODO: Implement date field
                 'date' => '2019-01-01'
+//                'date' => ''
             ]);
 
             foreach ($entry['items'] as $itemKey=>$item) {
@@ -297,7 +300,6 @@ class WorkLogController extends Controller
      */
     public function destroy($id)
     {
-        // TODO: Cascade delete
         $entries = LogEntry::where('log_id', '=', $id)->get();
         $deletedItemCount = 0;
 

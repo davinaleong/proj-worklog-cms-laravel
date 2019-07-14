@@ -165,7 +165,8 @@
                         <div class="form-check">
                             <label for="published">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="published" name="published">
+                                    <input class="form-check-input" type="checkbox" name="published"
+                                           value="published" {{ (old('published') ? 'checked' : '') }}>
                                     <label class="form-check-label" for="published">
                                         Publish this log
                                     </label>

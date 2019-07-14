@@ -222,7 +222,14 @@
                         <div class="form-check">
                             <label for="published">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="published" name="published">
+                                    @php
+                                    $checked = $log->published == 1 ? 'published' : '';
+                                    if (old('published') == 'published') {
+                                        $checked = old('published');
+                                    }
+                                    @endphp
+                                    <input class="form-check-input" type="checkbox" name="published"
+                                        value="published" {{ ($checked == 'published' ? 'checked' : '') }}>
                                     <label class="form-check-label" for="published">
                                         Publish this log
                                     </label>
