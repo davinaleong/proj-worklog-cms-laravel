@@ -28,7 +28,7 @@
 
                                 @foreach ($log->entries as $entry)
                                     <div style="color: {{ $entry->dayType['color_hex'] }}">
-                                        <i class="{{ $entry->dayType['icon_fa'] }}"></i> {{ $entry->title_entry }}</div>
+                                        <i class="{{ $entry->dayType['icon_fa'] }}"></i> {{ $entry->title() }}</div>
                                 @endforeach
 
                             </div>

@@ -12,7 +12,7 @@ class LogEntry extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'user_id', 'log_id', 'title_entry', 'code_type', 'date'
+        'user_id', 'log_id', 'code_type', 'date'
     ];
 
     /**
@@ -62,9 +62,19 @@ class LogEntry extends BaseModel
      * @return string
      * @throws \Exception
      */
-    public function titleDay()
+    public function title()
     {
-        $date = new \DateTime('date', new \DateTimeZone($this->timezone()));
-        return 'Day '.$date->format('d');
+        $date = new \DateTime($this->date, new \DateTimeZone(config('app.timezone')));
+        return $date->format('d M');
+    }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function dateInput()
+    {
+        $date = new \DateTime($this->date, new \DateTimeZone(config('app.timezone')));
+        return $date->format('d/m/Y');
     }
 }

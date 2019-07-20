@@ -62,9 +62,9 @@ class WorkLogController extends Controller
                 'string',
                 Rule::in(['', 'published'])
             ],
-            'entries.*.title_entry' => [
+            'entries.*.date' => [
                 'required',
-                'string'
+                'date_format:Y-m-d'
             ],
             'entries.*.code_type' => [
                 'required',
@@ -105,14 +105,13 @@ class WorkLogController extends Controller
         $createdItems = [];
 
         foreach (request('entries') as $entryKey=>$entry) {
+            $date = new \DateTime($entry['date'], new \DateTimeZone(config('app.timezone')));
             $createdEntry = LogEntry::create([
                 'user_id' => Auth::id(),
                 'log_id' => $log->id,
-                'title_entry' => $entry['title_entry'],
+                'title_entry' => 'Title',
                 'code_type' => $entry['code_type'],
-                // TODO: Implement date field
-                'date' => '2019-01-01'
-//                'date' => ''
+                'date' => $date->format('Y-m-d')
             ]);
 
             foreach ($entry['items'] as $itemKey=>$item) {
@@ -214,9 +213,10 @@ class WorkLogController extends Controller
                 'required',
                 'numeric'
             ],
-            'entries.*.title_entry' => [
+            'entries.*.date' => [
                 'required',
-                'string'
+                'string',
+                'date_format:d/m/Y'
             ],
             'entries.*.code_type' => [
                 'required',
@@ -257,8 +257,9 @@ class WorkLogController extends Controller
 
         foreach (request('entries') as $entryKey=>$entry) {
             $entryToUpdate = LogEntry::find($entry['id']);
-            $entryToUpdate->title_entry = $entry['title_entry'];
             $entryToUpdate->code_type = $entry['code_type'];
+            $date = new \DateTime($entry['date'], new \DateTimeZone(config('app.timezone')));
+            $entryToUpdate->date = $date->format('Y-m-d');
             $entryToUpdate->save();
 
             foreach ($entry['items'] as $itemKey=>$item) {

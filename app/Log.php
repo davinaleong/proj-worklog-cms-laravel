@@ -30,7 +30,7 @@ class Log extends BaseModel
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function entries() {
-        return $this->hasMany('App\LogEntry')->orderBy('id');
+        return $this->hasMany('App\LogEntry')->orderByDesc('date');
     }
 
     /**

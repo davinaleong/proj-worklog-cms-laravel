@@ -50,7 +50,7 @@
                         @foreach ($log->entries as $entry)
                         <li class="list-group-item">
                             <h5 style="color: {{ $entry->dayType['color_hex'] }}">
-                                <i class="{{ $entry->dayType['icon_fa'] }}"></i> {{ $entry->title_entry }}
+                                <i class="{{ $entry->dayType['icon_fa'] }}"></i> {{ $entry->title() }}
                             </h5>
 
                             <ol>
