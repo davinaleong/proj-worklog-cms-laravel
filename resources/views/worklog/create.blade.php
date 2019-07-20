@@ -90,17 +90,24 @@
                                     <div class="col-8">
                                         <div class="form-group">
                                             <label for="entries[{{ $i }}][title_entry]">Day Title <span class="text-danger">*</span></label>
+                                            @php
+                                                $title_entry = old('entries['.$i.'[title_entry]');
+                                            @endphp
                                             <input type="text" name="entries[{{ $i }}][title_entry]" class="form-control"
-                                                   placeholder="Entry Title" required>
+                                                   placeholder="Entry Title" value="{{ $title_entry }}" required>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="form-group">
                                             <label for="entries[{{ $i }}][code_type]">Day-Type <span class="text-danger">*</span></label>
+                                            @php
+                                                $code_type = old('entries['.$i.'[code_type]');
+                                            @endphp
                                             <select name="entries[{{ $i }}][code_type]" class="form-control" required>
                                                 <option value="">- Select Day-type -</option>
                                                 @foreach ($dayTypes as $dayType)
-                                                <option value="{{ $dayType->code_type }}">{{ $dayType->title_type }}</option>
+                                                <option value="{{ $dayType->code_type }}" {{ ($code_type == $dayType->code_type ? 'checked' : '') }}>
+                                                    {{ $dayType->title_type }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -123,13 +130,21 @@
                                         <!-- Item #0 (count: 1) -->
                                         <tr id="entry{{$i}}-item0-row">
                                             <td>
-                                                <select name="entries[{{ $i }}][items][0][code_project]"
-                                                        class="form-control form-control-sm" required>
-                                                    <option value="">- Select Project Code</option>
-                                                    @foreach ($projects as $project)
-                                                    <option value="{{ $project->code_project }}">{{ $project->title_project }} ({{ $project->code_project }})</option>
-                                                    @endforeach
-                                                </select>
+                                                <div class="input-group">
+                                                    <select name="entries[{{ $i }}][items][0][code_project]"
+                                                            class="form-control form-control-sm" required>
+                                                        <option value="">- Select Project Code</option>
+                                                        @foreach ($projects as $project)
+                                                            <option value="{{ $project->code_project }}">{{ $project->title_project }} ({{ $project->code_project }})</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text">
+                                                            <input type="checkbox" name="entries[{{ $i }}][items][0][show_project]"
+                                                                   value="show">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td>
                                                 <input type="text" name="entries[{{ $i }}][items][0][title_item]"

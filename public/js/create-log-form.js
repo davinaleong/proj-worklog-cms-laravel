@@ -16,16 +16,24 @@ $(document).ready(function () {
             $tbody.append(
                 '<tr id="entry' + i + '-item' + itemCount + '-row">\n' +
                 '  <td>\n' +
-                '      <select name="entries[' + i + '][items][' + itemCount + '][code_project]"\n' +
-                '              class="form-control form-control-sm" required>\n' +
-                '           <option value="">- Select Project Code</option>\n' +
-                '           <option value="KLICK">Klick (KLICK)</option>\n' +
-                '           <option value="LEARN">Learning (tutorials, playground, etc) (LEARN)</option>\n' +
-                '           <option value="OTHER">Others (OTHER)</option>\n' +
-                '           <option value="PROJ">Personal Projects (PROJ)</option>\n' +
-                '           <option value="POC">Prototype or Proof-of-concept (POC)</option>\n' +
-                '           <option value="SSO">Singapore Symphony Orchestra (SSO)</option>' +
-                '      </select>\n' +
+                '    <div class="input-group">\n' +
+                '        <select name="entries[' + i + '][items][' + itemCount + '][code_project]"\n' +
+                '                class="form-control form-control-sm" required>\n' +
+                '            <option value="">- Select Project Code</option>\n' +
+                '            <option value="KLICK">Klick (KLICK)</option>\n' +
+                '            <option value="LEARN">Learning (tutorials, playground, etc) (LEARN)</option>\n' +
+                '            <option value="OTHER">Others (OTHER)</option>\n' +
+                '            <option value="PROJ">Personal Projects (PROJ)</option>\n' +
+                '            <option value="POC">Prototype or Proof-of-concept (POC)</option>\n' +
+                '            <option value="SSO">Singapore Symphony Orchestra (SSO)</option>\n' +
+                '        </select>\n' +
+                '        <div class="input-group-append">\n' +
+                '            <div class="input-group-text">\n' +
+                '                <input type="checkbox" name="entries[' + i + '][items][' + itemCount + '][show_project]"\n' +
+                '                        value="show">\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '    </div>\n' +
                 '  </td>\n' +
                 '  <td>\n' +
                 '      <input type="text" name="entries[' + i + '][items][' + itemCount + '][title_item]"\n' +
