@@ -35,7 +35,7 @@
                                     Title <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" name="title_log" class="form-control form-control-lg"
-                                       placeholder="Title" value="{{ old('title') }}" required>
+                                       placeholder="Title" value="{{ old('title_log') }}" required>
                             </div>
 
                             <!-- Work Log Company & Year -->

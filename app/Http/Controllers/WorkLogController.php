@@ -62,6 +62,10 @@ class WorkLogController extends Controller
                 'string',
                 Rule::in(['', 'published'])
             ],
+            'entries.*.date' => [
+                'required',
+                'date_format:Y-m-d'
+            ],
             'entries.*.code_type' => [
                 'required',
                 'string',
@@ -209,9 +213,10 @@ class WorkLogController extends Controller
                 'required',
                 'numeric'
             ],
-            'entries.*.title_entry' => [
+            'entries.*.date' => [
                 'required',
-                'string'
+                'string',
+                'date_format:d/m/Y'
             ],
             'entries.*.code_type' => [
                 'required',
