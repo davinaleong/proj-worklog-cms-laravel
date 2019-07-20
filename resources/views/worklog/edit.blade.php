@@ -104,6 +104,20 @@
                             </div>
 
                             <div class="form-row">
+                                <div class="form-group">
+                                    <label for="entries[{{ $key }}][date]">Day Title <span class="text-danger">*</span></label>
+                                    @php
+                                        $date = $entry->dateInput();
+                                        if (old('entry['.$key.'][date]')) {
+                                            $date = old('entry['.$key.'][date]');
+                                        }
+                                    @endphp
+                                    <input type="text" name="entries[{{ $key }}][date]" class="form-control"
+                                           placeholder="DD-MM-YYYY" value="{{ $date }}" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="col-8">
                                     <div class="form-group">
                                         <label for="entries[{{ $key }}][title_entry]">Day Title <span class="text-danger">*</span></label>

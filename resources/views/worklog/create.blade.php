@@ -87,25 +87,14 @@
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="entries[{{ $i }}][date]">Day Title <span class="text-danger">*</span></label>
-                                        @php
-                                            $date = old('entries['.$i.'][date]');
-                                        @endphp
-                                        <input type="date" name="entries[{{ $i }}][date]" class="form-control"
-                                               placeholder="DD-MM-YYYY" value="{{ $date }}" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
                                     <div class="col-8">
                                         <div class="form-group">
-                                            <label for="entries[{{ $i }}][title_entry]">Day Title <span class="text-danger">*</span></label>
+                                            <label for="entries[{{ $i }}][date]">Day Title <span class="text-danger">*</span></label>
                                             @php
-                                                $title_entry = old('entries['.$i.'][title_entry]');
+                                                $date = old('entries['.$i.'][date]');
                                             @endphp
-                                            <input type="text" name="entries[{{ $i }}][title_entry]" class="form-control"
-                                                   placeholder="Entry Title" value="{{ $title_entry }}" required>
+                                            <input type="date" name="entries[{{ $i }}][date]" class="form-control"
+                                                   placeholder="DD-MM-YYYY" value="{{ $date }}" required>
                                         </div>
                                     </div>
                                     <div class="col-4">

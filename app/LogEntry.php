@@ -67,4 +67,14 @@ class LogEntry extends BaseModel
         $date = new \DateTime($this->date, new \DateTimeZone(config('app.timezone')));
         return $date->format('d M');
     }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function dateInput()
+    {
+        $date = new \DateTime($this->date, new \DateTimeZone(config('app.timezone')));
+        return $date->format('d/m/Y');
+    }
 }

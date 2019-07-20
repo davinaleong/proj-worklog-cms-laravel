@@ -62,10 +62,6 @@ class WorkLogController extends Controller
                 'string',
                 Rule::in(['', 'published'])
             ],
-            'entries.*.title_entry' => [
-                'required',
-                'string'
-            ],
             'entries.*.code_type' => [
                 'required',
                 'string',
@@ -109,7 +105,7 @@ class WorkLogController extends Controller
             $createdEntry = LogEntry::create([
                 'user_id' => Auth::id(),
                 'log_id' => $log->id,
-                'title_entry' => $entry['title_entry'],
+                'title_entry' => 'Title',
                 'code_type' => $entry['code_type'],
                 'date' => $date->format('Y-m-d')
             ]);
@@ -256,8 +252,9 @@ class WorkLogController extends Controller
 
         foreach (request('entries') as $entryKey=>$entry) {
             $entryToUpdate = LogEntry::find($entry['id']);
-            $entryToUpdate->title_entry = $entry['title_entry'];
             $entryToUpdate->code_type = $entry['code_type'];
+            $date = new \DateTime($entry['date'], new \DateTimeZone(config('app.timezone')));
+            $entryToUpdate->date = $date->format('Y-m-d');
             $entryToUpdate->save();
 
             foreach ($entry['items'] as $itemKey=>$item) {
