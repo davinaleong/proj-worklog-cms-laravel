@@ -12,7 +12,7 @@ class LogEntry extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'user_id', 'log_id', 'title_entry', 'code_type', 'date'
+        'user_id', 'log_id', 'code_type', 'date'
     ];
 
     /**
