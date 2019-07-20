@@ -124,10 +124,11 @@ class WorkLogController extends Controller
                         'code_project' => $item['code_project'],
                         'show_project' => 0
                     ]);
-                    $createdItem->show_project = $item['show_project'] == 'show' ? 1 : 0;
+                    $createdItem->show_project =
+                        array_key_exists('show_project', $item) && $item['show_project'] == 'show' ? 1 : 0;
                     $createdItem->save();
 
-                    $createdItems = $createdItem;
+                    $createdItems[] = $createdItem;
                 }
             }
 
