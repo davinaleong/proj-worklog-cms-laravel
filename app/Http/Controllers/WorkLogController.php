@@ -105,14 +105,13 @@ class WorkLogController extends Controller
         $createdItems = [];
 
         foreach (request('entries') as $entryKey=>$entry) {
+            $date = new \DateTime($entry['date'], new \DateTimeZone(config('app.timezone')));
             $createdEntry = LogEntry::create([
                 'user_id' => Auth::id(),
                 'log_id' => $log->id,
                 'title_entry' => $entry['title_entry'],
                 'code_type' => $entry['code_type'],
-                // TODO: Implement date field
-                'date' => '2019-01-01'
-//                'date' => ''
+                'date' => $date->format('Y-m-d')
             ]);
 
             foreach ($entry['items'] as $itemKey=>$item) {
