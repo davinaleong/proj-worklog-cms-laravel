@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('home', function() {
+    return redirect()->route('worklog.index');
+});
+
 Route::get('/pages/{pageName}', function($pageName) {
     return view("pages.$pageName");
 });
