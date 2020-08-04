@@ -58,9 +58,12 @@
                 </a>
 
                 <h6 class="collapse-header">Account Actions</h6>
-                <a class="collapse-item" href="{{ url('/logout') }}">
-                    <i class="fas fa-fw fa-sign-out-alt"></i> Logout
-                </a>
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf;
+                    <button class="collapse-item" type="submit">
+                        <i class="fas fa-fw fa-sign-out-alt"></i> Logout
+                    </button>
+                </form>
             </div>
         </div>
     </li>
