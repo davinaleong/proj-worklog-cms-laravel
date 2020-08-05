@@ -62,9 +62,19 @@ class LogEntry extends BaseModel
      * @return string
      * @throws \Exception
      */
+    public function title()
+    {
+        $date = new \DateTime($this->date, new \DateTimeZone($this->timezone()));
+        return $date->format('d M');
+    }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
     public function titleDay()
     {
-        $date = new \DateTime('date', new \DateTimeZone($this->timezone()));
+        $date = new \DateTime($this->date, new \DateTimeZone($this->timezone()));
         return 'Day '.$date->format('d');
     }
 }
